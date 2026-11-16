@@ -1,0 +1,26 @@
+app/src/qml/AppearanceEditor.qml
+  s_44ffab570ddd70::t_4b7329c0cb506e 8,20-21,27-32,35,39,43,46-48,51-53,57,84-86,92,116-118,120,122,124,126-157,162,165-167,169,172-174,176-181,183-184,187-188,192-198,201,203-205,207-212,214-219,223-229,232,234,240,243-263,266-272,277
+  s_44ffab570ddd70::t_f14ed593743f4e 213
+app/src/Main.qml
+  s_44ffab570ddd70::t_f4073f5f4b6c60 103-104
+app/src/qml/ColorField.qml
+  s_44ffab570ddd70::t_f4073f5f4b6c60 13,19-21,34-39
+app/src/qml/Inspector.qml
+  s_44ffab570ddd70::t_f4073f5f4b6c60 130
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "139fe2a86e93479a1c8a602dc0c7b7a14dd0534b",
+  "prompts": {},
+  "sessions": {
+    "s_44ffab570ddd70": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "01a1e5f7-e708-7522-be1e-95c4b8831cb1",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Ben Wyrosdick <ben.wyrosdick@gmail.com>"
+    }
+  }
+}
