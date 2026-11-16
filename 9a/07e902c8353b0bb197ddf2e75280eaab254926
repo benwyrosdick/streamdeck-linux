@@ -1,0 +1,22 @@
+shell/streamdeck-linux.deck/FrameImage.qml
+  s_41b6412da7f181::t_12643b23c597b4 1-29,31-58
+  s_41b6412da7f181::t_dafe5a0292b715 30
+shell/streamdeck-linux.deck/Panel.qml
+  s_41b6412da7f181::t_2f4ac4af831d3e 272,292
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9a07e902c8353b0bb197ddf2e75280eaab254926",
+  "prompts": {},
+  "sessions": {
+    "s_41b6412da7f181": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "01a1e66f-4a72-7419-93e5-300ec3a90f83",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Ben Wyrosdick <ben.wyrosdick@gmail.com>"
+    }
+  }
+}
