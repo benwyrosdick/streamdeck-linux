@@ -1,0 +1,541 @@
+resources/builtin/com.elgato.streamdeck.system.hotkeyswitch.sdPlugin/Images/keyboard-switch-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/brightness-low.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.profile.backtoparent.sdPlugin/Images/parent-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.soundboard.sdPlugin/manifest.json
+  s_44ffab570ddd70::t_f55259832af22c 1-65
+resources/builtin/com.elgato.streamdeck.system.mouse.sdPlugin/Images/wheel-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+app/src/qml/FieldLabel.qml
+  s_44ffab570ddd70::t_ee33073513a487 1-8,10-12
+  s_44ffab570ddd70::t_b2b6084f2c17a2 9
+resources/builtin/com.elgato.streamdeck.soundboard.sdPlugin/Images/play-audio.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+app/src/qml/PageBar.qml
+  s_44ffab570ddd70::t_3f7fd20c6c8325 1-8,10-31,33-88,90-111,113-117
+  s_44ffab570ddd70::t_b2b6084f2c17a2 9,32,89
+  s_44ffab570ddd70::t_bc0d9ec652298c 112
+daemon/src/main.rs
+  s_44ffab570ddd70::t_95bed7bde380cb 1-240
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/brightness-decrease.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+app/src/icons/streamdeck.svg
+  s_44ffab570ddd70::t_acb9e36c61410d 1-12
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/manifest.json
+  s_44ffab570ddd70::t_f55259832af22c 1-48
+daemon/src/engine.rs
+  s_44ffab570ddd70::t_dda370eb83bb93 1-1138,1141-1144,1146-1173,1175-1375,1379-1851
+  s_44ffab570ddd70::t_5583601de6ec66 1139-1140,1145,1174,1376-1378
+resources/builtin/com.elgato.streamdeck.system.hotkey.sdPlugin/Images/category.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/media-kbd-down.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.page.sdPlugin/Images/category.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+daemon/src/plugins.rs
+  s_44ffab570ddd70::t_0efcd220b58926 1-68,71,73-361
+  s_44ffab570ddd70::t_fba456496e461b 69-70,72
+resources/builtin/com.elgato.streamdeck.multiactions.sdPlugin/Images/random-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.multiactions.sdPlugin/manifest.json
+  s_44ffab570ddd70::t_f55259832af22c 1-99
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/media-volume.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+app/src/qml/TopBar.qml
+  s_44ffab570ddd70::t_d01a9ed1eb56c0 1-8,10-16,18-55,57-61,63-116,118-124,126-166,168-176,178-182,184-200
+  s_44ffab570ddd70::t_b2b6084f2c17a2 9,17,56,62,117,125
+  s_44ffab570ddd70::t_483cdfec5d3864 177,183
+  s_44ffab570ddd70::t_bc0d9ec652298c 167
+app/bin/build
+  s_44ffab570ddd70::t_acb9e36c61410d 1-8
+app/src/qml/IconLibrary.qml
+  s_44ffab570ddd70::t_b2b6084f2c17a2 103,112
+  s_44ffab570ddd70::t_a8edbe74ccdc50 1-102,104-111,113-116
+app/src/portalfilepicker.h
+  s_44ffab570ddd70::t_d14edd374b7e14 1-2,5-33
+  s_44ffab570ddd70::t_6d8baef6acc35d 3-4
+resources/builtin/com.elgato.streamdeck.system.website.sdPlugin/Images/website-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+app/src/qml/Inspector.qml
+  s_44ffab570ddd70::t_f060d2ea5c6712 1-7,9-62,64-69,71-83,85-120,122-140,142-178,180-190,192-194
+  s_44ffab570ddd70::t_b2b6084f2c17a2 8,63,70,84,121,141,179,191
+app/src/translator.h
+  s_44ffab570ddd70::t_d45970fac51a88 1-45
+resources/builtin/com.elgato.streamdeck.system.actionbar.sdPlugin/Images/action-bar.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.close.sdPlugin/Images/close-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/brightness-medium.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.multiactions.sdPlugin/Images/multi-switch.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/media-stop.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+daemon/src/render.rs
+  s_44ffab570ddd70::t_fba456496e461b 502
+  s_44ffab570ddd70::t_5583601de6ec66 206,266
+  s_44ffab570ddd70::t_f4e217b582d423 1-205,207-265,267-501,503-536
+app/src/daemonclient.cpp
+  s_44ffab570ddd70::t_8e70759c5af49e 117-124
+  s_44ffab570ddd70::t_317da05fd9c45d 1-116,125-217
+app/src/qml/Toasts.qml
+  s_44ffab570ddd70::t_b2b6084f2c17a2 43-45,53
+  s_44ffab570ddd70::t_f6fa13eda680da 1-42,46-52,54-61
+resources/builtin/com.elgato.streamdeck.multiactions.sdPlugin/Images/multi-switch-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.actionbar.sdPlugin/manifest.json
+  s_44ffab570ddd70::t_f55259832af22c 1-44
+app/src/apputil.h
+  s_44ffab570ddd70::t_0d852544df6ac9 1-23,25-27
+  s_44ffab570ddd70::t_ab716f7ba9fa38 24
+app/src/i18n/en.json
+  s_44ffab570ddd70::t_acb9e36c61410d 1-4
+resources/builtin/com.elgato.streamdeck.page.sdPlugin/Images/page-prev-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.open.sdPlugin/Images/open-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.openapp.sdPlugin/Images/app.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/brightness-low.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+app/src/qml/ActionList.qml
+  s_44ffab570ddd70::t_8d7bc6bc5da2ec 1-7,9-24,29-83,85-90,92-95,97-108,110-126,128-131,133-170,172-184
+  s_44ffab570ddd70::t_b2b6084f2c17a2 8,84,91,96,127,132,171
+  s_44ffab570ddd70::t_ab716f7ba9fa38 25-28
+  s_44ffab570ddd70::t_c71aa59c4fd5cf 109
+resources/builtin/com.elgato.streamdeck.profile.openchild.sdPlugin/Images/folder.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/media-volume-up.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.pagination.sdPlugin/Images/category.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+daemon/src/store.rs
+  s_44ffab570ddd70::t_43164209032427 1-647
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/brightness-max.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.page.sdPlugin/Images/page-next-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.profile.openchild.sdPlugin/manifest.json
+  s_44ffab570ddd70::t_f55259832af22c 1-41
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/media-kbd-up.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+tools/dev-daemon
+  s_44ffab570ddd70::t_3fe044dfc08f4f 1-10
+resources/builtin/com.elgato.streamdeck.multiactions.sdPlugin/Images/delay.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.digitaltime.sdPlugin/Images/category.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.soundboard.sdPlugin/Images/stop-audio.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+daemon/src/system.rs
+  s_44ffab570ddd70::t_85519496018c09 1-478
+resources/builtin/com.elgato.streamdeck.system.sleep.sdPlugin/Images/sleep.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/brightness-high.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.profile.openchild.sdPlugin/Images/category.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.multiactions.sdPlugin/Images/multi.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+daemon/src/model.rs
+  s_44ffab570ddd70::t_0a79ee8c6af691 1-300
+resources/builtin/com.elgato.streamdeck.system.hotkey.sdPlugin/Images/keyboard.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.hotkey.sdPlugin/manifest.json
+  s_44ffab570ddd70::t_f55259832af22c 1-49
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/media-player.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.vsdtoggle.sdPlugin/Images/vsd-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/media-mute.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/media-brightness-down.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/media-mirror.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.vsdtoggle.sdPlugin/manifest.json
+  s_44ffab570ddd70::t_f55259832af22c 1-39
+examples/com.example.counter.sdPlugin/manifest.json
+  s_44ffab570ddd70::t_0bc418988f6c78 1-26
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/media-eject.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+app/src/translator.cpp
+  s_44ffab570ddd70::t_d45970fac51a88 1-138
+resources/builtin/com.elgato.streamdeck.system.digitaltime.sdPlugin/manifest.json
+  s_44ffab570ddd70::t_f55259832af22c 1-39
+app/src/VirtualDeckWindow.qml
+  s_44ffab570ddd70::t_b2b6084f2c17a2 12,54,100,136
+  s_44ffab570ddd70::t_518e1fe288e1d1 1-11,13-53,55-99,101-135,137-140
+daemon/src/paths.rs
+  s_44ffab570ddd70::t_89f1681ac6d67b 1-80
+resources/builtin/com.elgato.streamdeck.keys.sdPlugin/Images/key-logic-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/media-volume-down.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/media.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/media-playpause.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+app/src/qml/ColorField.qml
+  s_44ffab570ddd70::t_b2b6084f2c17a2 24
+  s_44ffab570ddd70::t_323e3f20d4a591 1-23,25-39
+resources/builtin/com.elgato.streamdeck.system.sleep.sdPlugin/manifest.json
+  s_44ffab570ddd70::t_f55259832af22c 1-39
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/manifest.json
+  s_44ffab570ddd70::t_f55259832af22c 1-48
+examples/com.example.counter.sdPlugin/plugin.js
+  s_44ffab570ddd70::t_0bc418988f6c78 1-61
+app/src/qml/qmldir
+  s_44ffab570ddd70::t_c4fbcdae6f2ac0 1,3-21
+  s_44ffab570ddd70::t_b2b6084f2c17a2 2
+daemon/src/builtins.rs
+  s_44ffab570ddd70::t_aa58b6db9ff199 1-970
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/brightness-high.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/brightness-decrease.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/media-mirror.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.vsdtoggle.sdPlugin/Images/category.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+app/src/theme.h
+  s_44ffab570ddd70::t_d45970fac51a88 1-40
+resources/builtin/com.elgato.streamdeck.system.openapp.sdPlugin/Images/app-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+app/src/qml/ChildActions.qml
+  s_44ffab570ddd70::t_b2b6084f2c17a2 50-52,75,87,107
+  s_44ffab570ddd70::t_1723f20b9a922a 1-49,53-74,76-86,88-106,108-134
+examples/com.example.counter.sdPlugin/pi.html
+  s_44ffab570ddd70::t_0bc418988f6c78 1-44
+resources/builtin/com.elgato.streamdeck.system.pagination.sdPlugin/Images/dots.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/media-volume.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/category.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/brightness-min.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.keys.sdPlugin/Images/key-logic.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.close.sdPlugin/manifest.json
+  s_44ffab570ddd70::t_f55259832af22c 1-39
+resources/builtin/com.elgato.streamdeck.soundboard.sdPlugin/Images/category.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.text.sdPlugin/Images/text.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/brightness-min.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/media-volume-down.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.openapp.sdPlugin/manifest.json
+  s_44ffab570ddd70::t_f55259832af22c 1-39
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/media-eject.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.openapp.sdPlugin/Images/category.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+app/src/qml/DeviceCanvas.qml
+  s_44ffab570ddd70::t_b2b6084f2c17a2 26,28,85,129,152,165
+  s_44ffab570ddd70::t_cb8599aa2491b3 1-14,16-23,25,27,29-75,78-84,86-112,114-128,130-151,153-164,166-178
+  s_44ffab570ddd70::t_bc0d9ec652298c 15,24,76,113
+  s_44ffab570ddd70::t_8e70759c5af49e 77
+resources/builtin/com.elgato.streamdeck.system.hotkey.sdPlugin/Images/keyboard-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/brightness-increase.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/media-fast-forward.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/brightness.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.profile.backtoparent.sdPlugin/Images/category.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.profile.backtoparent.sdPlugin/manifest.json
+  s_44ffab570ddd70::t_f55259832af22c 1-41
+resources/builtin/com.elgato.streamdeck.system.website.sdPlugin/manifest.json
+  s_44ffab570ddd70::t_f55259832af22c 1-39
+app/src/qml/Preferences.qml
+  s_44ffab570ddd70::t_910064d9bdea83 1-81,83-84,86-95,97-118,120-124,126-130,132-135,137-142,144-167,169-170,172,174,176-191,193-216,218-220,222-286,288-304,306-364,366-386,388-412
+  s_44ffab570ddd70::t_b2b6084f2c17a2 82,85,96,119,125,131,136,143,168,171,173,175,192,217,221,287,305,365,387
+resources/builtin/com.elgato.streamdeck.timer.sdPlugin/Images/timer-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/media-fast-forward.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.page.sdPlugin/Images/page-indicator-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+daemon/src/control.rs
+  s_44ffab570ddd70::t_f3c365c3373419 1-961
+app/src/pluginhost.h
+  s_44ffab570ddd70::t_b49b43a66dd865 1-26
+resources/builtin/com.elgato.streamdeck.system.pagination.sdPlugin/manifest.json
+  s_44ffab570ddd70::t_f55259832af22c 1-39
+resources/builtin/com.elgato.streamdeck.system.digitaltime.sdPlugin/Images/clock-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/media-kbd-down.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+app/src/qml/HotkeyField.qml
+  s_44ffab570ddd70::t_b2b6084f2c17a2 21-23,56
+  s_44ffab570ddd70::t_6d12c53f308acd 1-20,24-55,57-110
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/media-kbd-toggle.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/media-previous.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.dial.sdPlugin/Images/dial-stack-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.multiactions.sdPlugin/Images/category.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/brightness-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+app/src/daemonclient.h
+  s_44ffab570ddd70::t_6d8baef6acc35d 5,15
+  s_44ffab570ddd70::t_8e70759c5af49e 43
+  s_44ffab570ddd70::t_754cfbaa6c952c 1-4,6-14,16-42,44-86
+resources/builtin/com.elgato.streamdeck.system.mouse.sdPlugin/Images/wheel.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+app/src/qml/Store.qml
+  s_44ffab570ddd70::t_e8562ef345c633 1-97,113-125,127-348
+  s_44ffab570ddd70::t_bc0d9ec652298c 98,108
+  s_44ffab570ddd70::t_f6ba2cd6e58288 110,126
+  s_44ffab570ddd70::t_ab716f7ba9fa38 99-107,109,111-112
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/category.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+app/src/main.cpp
+  s_44ffab570ddd70::t_06d2004671a726 1-14,17-140,153-154
+  s_44ffab570ddd70::t_f076f966ff7781 15-16,141-152
+resources/builtin/com.elgato.streamdeck.multiactions.sdPlugin/Images/delay-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.text.sdPlugin/Images/text-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.keys.sdPlugin/Images/category.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.hotkeyswitch.sdPlugin/Images/keyboard-switch.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+app/src/pluginhost.cpp
+  s_44ffab570ddd70::t_cc55b3cc6de4f9 1-3,5-60
+  s_44ffab570ddd70::t_6d8baef6acc35d 4
+resources/builtin/com.elgato.streamdeck.system.open.sdPlugin/manifest.json
+  s_44ffab570ddd70::t_f55259832af22c 1-39
+resources/builtin/com.elgato.streamdeck.multiactions.sdPlugin/Images/multi-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/brightness-increase.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.dial.sdPlugin/Images/category.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+app/src/apputil.cpp
+  s_44ffab570ddd70::t_9b624f341005c7 1-62
+resources/builtin/com.elgato.streamdeck.system.text.sdPlugin/Images/category.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.page.sdPlugin/Images/page-indicator.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/media-brightness-up.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.vsdtoggle.sdPlugin/Images/vsd.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.actionbar.sdPlugin/Images/action-bar-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.close.sdPlugin/Images/category.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.profile.rotate.sdPlugin/Images/category.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+daemon/Cargo.toml
+  s_44ffab570ddd70::t_b48fe712f36dae 2,4-16,18-23,25-39
+  s_44ffab570ddd70::t_25b44cb11a4e84 24
+  s_44ffab570ddd70::t_a25f37c7bf5746 17
+  s_44ffab570ddd70::t_4158396f009e52 1,3
+resources/builtin/com.elgato.streamdeck.system.actionbar.sdPlugin/Images/category.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/media-kbd-up.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+app/src/portalfilepicker.cpp
+  s_44ffab570ddd70::t_3a6e318e36719e 1-143
+app/src/qml/AppPicker.qml
+  s_44ffab570ddd70::t_c928a355d3a58a 1-77
+app/src/qml/BuiltinInspector.qml
+  s_44ffab570ddd70::t_5c505afcd46ed1 1-69,71-179,181-383,385,387,389-435,437-453,455-492,494-579,581-622
+  s_44ffab570ddd70::t_b2b6084f2c17a2 70,180,384,386,388,436,454,493,580
+tools/gen_builtin.py
+  s_44ffab570ddd70::t_f9253c78f711f3 1-244
+docs/CONTROL_API.md
+  s_44ffab570ddd70::t_1fe16bc63f4c31 1-139
+daemon/src/settings.rs
+  s_44ffab570ddd70::t_b6f0c24b7220ee 1-101
+resources/builtin/com.elgato.streamdeck.keys.sdPlugin/Images/action-trigger.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/media-rewind.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/media-playpause.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/media-brightness-down.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/media-mute.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/brightness-max.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.dial.sdPlugin/Images/dial-stack.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+app/src/resources.qrc
+  s_44ffab570ddd70::t_b2b6084f2c17a2 22
+  s_44ffab570ddd70::t_acb9e36c61410d 1-21,23-30
+resources/builtin/com.elgato.streamdeck.system.sleep.sdPlugin/Images/category.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.mouse.sdPlugin/Images/category.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/media-brightness.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/media-volume-up.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/media-kbd-brightness.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.website.sdPlugin/Images/category.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.profile.rotate.sdPlugin/Images/profile-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.text.sdPlugin/manifest.json
+  s_44ffab570ddd70::t_f55259832af22c 1-39
+app/src/theme.cpp
+  s_44ffab570ddd70::t_d45970fac51a88 1-108
+resources/builtin/com.elgato.streamdeck.system.digitaltime.sdPlugin/Images/clock.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/media-next.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.keys.sdPlugin/Images/action-wheel-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+app/src/Main.qml
+  s_44ffab570ddd70::t_b2b6084f2c17a2 15,20,75,84,126,134
+  s_44ffab570ddd70::t_1274ae597a8cc5 1-14,16-19,21-74,76-83,85-125,127-133,135-176
+resources/builtin/com.elgato.streamdeck.multiactions.sdPlugin/Images/random.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.hotkeyswitch.sdPlugin/manifest.json
+  s_44ffab570ddd70::t_f55259832af22c 1-45
+resources/builtin/com.elgato.streamdeck.system.open.sdPlugin/Images/open.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+examples/com.example.counter.sdPlugin/key.svg
+  s_44ffab570ddd70::t_0bc418988f6c78 1
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/media-kbd-toggle.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+app/src/qml/KeyCell.qml
+  s_44ffab570ddd70::t_1f8c082c91ebf8 1-14,16-38,40-56,58-153
+  s_44ffab570ddd70::t_b2b6084f2c17a2 15,39,57
+daemon/src/input.rs
+  s_44ffab570ddd70::t_b710c6f4b1b7e7 1-396
+resources/builtin/com.elgato.streamdeck.page.sdPlugin/Images/page-goto.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/media-next.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.page.sdPlugin/Images/page-next.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.profile.openchild.sdPlugin/Images/folder-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.soundboard.sdPlugin/Images/play-audio-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.keys.sdPlugin/Images/action-wheel.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.page.sdPlugin/manifest.json
+  s_44ffab570ddd70::t_f55259832af22c 1-106
+resources/builtin/com.elgato.streamdeck.timer.sdPlugin/manifest.json
+  s_44ffab570ddd70::t_f55259832af22c 1-45
+daemon/src/audio.rs
+  s_44ffab570ddd70::t_f042e24c3cb97d 1-185
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/media-brightness-up.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+app/src/qml/HelpOverlay.qml
+  s_44ffab570ddd70::t_b2b6084f2c17a2 20-22,61,66
+  s_44ffab570ddd70::t_a32bc6e947162b 1-18,23-33,35-60,62-65,67-72
+  s_44ffab570ddd70::t_bf8391048756ce 19,34
+app/src/qml/PluginInspector.qml
+  s_44ffab570ddd70::t_b2b6084f2c17a2 89,100
+  s_44ffab570ddd70::t_f21e02bc820ee7 1-27,39-74,76-88,90-99,101-104
+  s_44ffab570ddd70::t_9017c40d519480 28-38,75
+resources/builtin/com.elgato.streamdeck.profile.backtoparent.sdPlugin/Images/parent.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.timer.sdPlugin/Images/category.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+examples/com.example.counter.sdPlugin/icon.svg
+  s_44ffab570ddd70::t_0bc418988f6c78 1
+daemon/src/sdk.rs
+  s_44ffab570ddd70::t_97cd163890aebf 1-92
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/media-rewind.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+daemon/src/catalog.rs
+  s_44ffab570ddd70::t_3823d4f2e029fb 1-78
+resources/builtin/com.elgato.streamdeck.system.open.sdPlugin/Images/category.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.profile.rotate.sdPlugin/Images/profile.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+daemon/src/device.rs
+  s_44ffab570ddd70::t_5583601de6ec66 45
+  s_44ffab570ddd70::t_0e0772f1addb9c 1-44,46-291
+resources/builtin/com.elgato.streamdeck.system.close.sdPlugin/Images/close.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.keys.sdPlugin/manifest.json
+  s_44ffab570ddd70::t_f55259832af22c 1-90
+resources/builtin/com.elgato.streamdeck.page.sdPlugin/Images/page-prev.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+app/streamdeck.pro
+  s_44ffab570ddd70::t_acb9e36c61410d 1-24
+resources/builtin/com.elgato.streamdeck.soundboard.sdPlugin/Images/stop-audio-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.website.sdPlugin/Images/website.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/media-kbd-brightness.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.keys.sdPlugin/Images/action-trigger-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.keybrightness.sdPlugin/Images/media-previous.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.sleep.sdPlugin/Images/sleep-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+app/src/qml/AppearanceEditor.qml
+  s_44ffab570ddd70::t_e32451a469594c 1-41,43,45-101,103-106,108-141,143-147,149-164,166-172,174-190,192-196,198-223
+  s_44ffab570ddd70::t_b2b6084f2c17a2 42,44,102,107,142,148,165,173,191,197
+  s_44ffab570ddd70::t_a7652552f9ca95 224
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/media-brightness.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.timer.sdPlugin/Images/timer.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.dial.sdPlugin/manifest.json
+  s_44ffab570ddd70::t_f55259832af22c 1-46
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/media-stop.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.hotkeyswitch.sdPlugin/Images/category.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+app/src/qml/DragGhost.qml
+  s_44ffab570ddd70::t_b2b6084f2c17a2 32-34
+  s_44ffab570ddd70::t_311d5db7b39c06 1-31,35-54
+resources/builtin/com.elgato.streamdeck.page.sdPlugin/Images/page-goto-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.pagination.sdPlugin/Images/dots-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.profile.rotate.sdPlugin/manifest.json
+  s_44ffab570ddd70::t_f55259832af22c 1-44
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/brightness-medium.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/media-list.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.multimedia.sdPlugin/Images/media-player.svg
+  s_44ffab570ddd70::t_f55259832af22c 1
+resources/builtin/com.elgato.streamdeck.system.mouse.sdPlugin/manifest.json
+  s_44ffab570ddd70::t_f55259832af22c 1-46
+.gitignore
+  s_44ffab570ddd70::t_b97c02eb8d37b1 1-8
+app/src/qml/Ui.qml
+  s_44ffab570ddd70::t_c566343c8bd852 1-20
+daemon/Cargo.lock
+  s_44ffab570ddd70::t_9cdb9f3fb2a9ba 1-2773
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e5315706ae9afcd560add5dcece11ece622dc82d",
+  "prompts": {},
+  "sessions": {
+    "s_44ffab570ddd70": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "01a1e5f7-e708-7522-be1e-95c4b8831cb1",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Ben Wyrosdick <ben.wyrosdick@gmail.com>"
+    }
+  }
+}
