@@ -269,12 +269,10 @@ Panel {
               border.color: keyMouse.containsMouse ? Commons.Color.accent : Qt.darker(root.foreground, 3)
               scale: keyMouse.pressed ? 0.94 : 1
               Behavior on scale { NumberAnimation { duration: Style.duration(80); easing.type: Easing.OutCubic } }
-              Image {
+              FrameImage {
                 anchors.fill: parent
                 anchors.margins: 2
                 source: root.frameUrl("key", key.index)
-                cache: false
-                asynchronous: true
                 smooth: true
                 mipmap: true
                 sourceSize: Qt.size(144, 144)
@@ -291,14 +289,12 @@ Panel {
         }
 
         // Stream Deck + touch strip or Neo info bar.
-        Image {
+        FrameImage {
           visible: !!root.device && root.device.hasScreen
           width: keys.width
           height: visible ? width / root.device.screenAspect : 0
           anchors.horizontalCenter: parent.horizontalCenter
           source: visible ? root.frameUrl("screen", 0) : ""
-          cache: false
-          asynchronous: true
           fillMode: Image.PreserveAspectFit
         }
 
