@@ -77,7 +77,8 @@ QtObject {
         }
         function onStateChanged() {
             if (!store.device && store.devices.length > 0) {
-                const wanted = startDevice && store.devices.find(d => d.id === startDevice)
+                const want = startDevice || util.env("STREAMDECK_TEST_DEVICE")
+                const wanted = want && store.devices.find(d => d.id === want)
                 const hw = store.devices.find(d => !d.virtual)
                 store.deviceId = (wanted || hw || store.devices[0]).id
             }

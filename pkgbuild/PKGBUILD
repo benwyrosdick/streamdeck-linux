@@ -1,0 +1,63 @@
+# Builds from this checkout: `bin/install` at the repository root runs makepkg here.
+pkgname=streamdeck-linux
+pkgver=0.1.0
+pkgrel=1
+pkgdesc='Stream Deck for Linux: editor, background service, SDK plugin host and an Omarchy bar widget'
+arch=('x86_64' 'aarch64')
+license=('MIT')
+depends=('qt6-base' 'qt6-declarative' 'qt6-wayland' 'qt6-webengine' 'qt6-svg' 'hidapi' 'alsa-lib'
+         'wtype' 'wl-clipboard' 'curl' 'xdg-desktop-portal' 'hicolor-icon-theme')
+optdepends=('nodejs: run plugins built with the Stream Deck SDK'
+            'gtk3: gtk-launch, for apps whose desktop entry is D-Bus activated'
+            'hyprland: smart profiles and the Open/Close Application actions'
+            'omarchy: the Stream Deck bar widget')
+# Rust's cargo is needed too; it is not listed because most people have it
+# from rustup, which pacman does not know about.
+makedepends=('gcc' 'make')
+install=streamdeck-linux.install
+# makepkg's LTO turns hidapi's bundled C into bitcode the Rust linker cannot link.
+options=('!lto')
+
+build() {
+  cd "$startdir/.."
+  if ! command -v cargo >/dev/null 2>&1; then
+    echo "cargo is needed to build streamdeckd; install it with rustup or 'pacman -S rust'." >&2
+    return 1
+  fi
+  (cd daemon && cargo build --release --locked)
+  app/bin/build
+}
+
+check() {
+  cd "$startdir/.."
+  (cd daemon && cargo test --release --locked)
+  if command -v node >/dev/null 2>&1; then
+    node --test shell/streamdeck-linux.deck/tests/
+  fi
+}
+
+package() {
+  cd "$startdir/.."
+  install -Dm755 daemon/target/release/streamdeckd "$pkgdir/usr/bin/streamdeckd"
+  install -Dm755 app/build/streamdeck "$pkgdir/usr/bin/streamdeck"
+  install -Dm755 packaging/streamdeck-omarchy-widget "$pkgdir/usr/bin/streamdeck-omarchy-widget"
+
+  install -dm755 "$pkgdir/usr/share/streamdeck-linux"
+  cp -r resources/builtin "$pkgdir/usr/share/streamdeck-linux/builtin"
+  install -dm755 "$pkgdir/usr/share/streamdeck-linux/omarchy"
+  cp -r shell/streamdeck-linux.deck "$pkgdir/usr/share/streamdeck-linux/omarchy/"
+  rm -rf "$pkgdir/usr/share/streamdeck-linux/omarchy/streamdeck-linux.deck/tests"
+  cp -r examples "$pkgdir/usr/share/streamdeck-linux/examples"
+
+  install -Dm644 packaging/streamdeckd.service "$pkgdir/usr/lib/systemd/user/streamdeckd.service"
+  install -Dm644 packaging/70-streamdeck.rules "$pkgdir/usr/lib/udev/rules.d/70-streamdeck.rules"
+  install -Dm644 packaging/streamdeck.desktop "$pkgdir/usr/share/applications/streamdeck.desktop"
+  install -Dm644 packaging/streamdeck-vsd.desktop "$pkgdir/usr/share/applications/streamdeck-vsd.desktop"
+  install -Dm644 packaging/streamdeck-linux.xml "$pkgdir/usr/share/mime/packages/streamdeck-linux.xml"
+  install -Dm644 app/src/icons/streamdeck.svg "$pkgdir/usr/share/icons/hicolor/scalable/apps/streamdeck.svg"
+
+  install -Dm644 README.md "$pkgdir/usr/share/doc/streamdeck-linux/README.md"
+  install -Dm644 docs/CONTROL_API.md "$pkgdir/usr/share/doc/streamdeck-linux/CONTROL_API.md"
+  install -Dm644 docs/ACTIONS.md "$pkgdir/usr/share/doc/streamdeck-linux/ACTIONS.md"
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

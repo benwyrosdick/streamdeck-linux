@@ -1,0 +1,52 @@
+#!/bin/sh
+# Adds the Stream Deck widget to the Omarchy bar, or takes it off again.
+#   streamdeck-omarchy-widget install   copy the widget into ~/.config/omarchy/plugins and put it on the bar
+#   streamdeck-omarchy-widget remove    take it off the bar and delete the copy
+set -eu
+
+id="streamdeck-linux.deck"
+src="${STREAMDECK_WIDGET_SOURCE:-/usr/share/streamdeck-linux/omarchy/$id}"
+dest="${XDG_CONFIG_HOME:-$HOME/.config}/omarchy/plugins/$id"
+shell_json="${XDG_CONFIG_HOME:-$HOME/.config}/omarchy/shell.json"
+
+case "${1:-install}" in
+  install)
+    if ! command -v omarchy >/dev/null 2>&1; then
+      echo "Omarchy is not installed; nothing to add the widget to." >&2
+      exit 1
+    fi
+    mkdir -p "$(dirname "$dest")"
+    rm -rf "$dest"
+    cp -r "$src" "$dest"
+    rm -rf "$dest/tests"
+    omarchy bar put "$id"
+    ;;
+  remove)
+    if [ -f "$shell_json" ]; then
+      cp "$shell_json" "$shell_json.bak.$(date +%s)"
+      # Drop the widget from every bar section, keeping everything else as is.
+      python3 -I - "$shell_json" "$id" <<'PY'
+import json, sys
+path, wid = sys.argv[1], sys.argv[2]
+with open(path) as f:
+    data = json.load(f)
+layout = data.get("bar", {}).get("layout", {})
+for section, items in layout.items():
+    if isinstance(items, list):
+        layout[section] = [i for i in items if not (isinstance(i, dict) and i.get("id") == wid) and i != wid]
+tmp = path + ".tmp"
+with open(tmp, "w") as f:
+    json.dump(data, f, indent=2)
+    f.write("\n")
+import os
+os.replace(tmp, path)
+PY
+    fi
+    rm -rf "$dest"
+    echo "Removed the Stream Deck widget."
+    ;;
+  *)
+    echo "usage: streamdeck-omarchy-widget [install|remove]" >&2
+    exit 2
+    ;;
+esac

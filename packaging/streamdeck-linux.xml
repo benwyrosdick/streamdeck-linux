@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="application/x-streamdeck-profile">
+    <comment>Stream Deck profile</comment>
+    <sub-class-of type="application/zip"/>
+    <glob pattern="*.streamDeckProfile"/>
+  </mime-type>
+  <mime-type type="application/x-streamdeck-plugin">
+    <comment>Stream Deck plugin</comment>
+    <sub-class-of type="application/zip"/>
+    <glob pattern="*.streamDeckPlugin"/>
+  </mime-type>
+  <mime-type type="application/x-streamdeck-iconpack">
+    <comment>Stream Deck icon pack</comment>
+    <sub-class-of type="application/zip"/>
+    <glob pattern="*.streamDeckIconPack"/>
+  </mime-type>
+  <mime-type type="application/x-streamdeck-backup">
+    <comment>Stream Deck profiles backup</comment>
+    <sub-class-of type="application/zip"/>
+    <glob pattern="*.streamDeckProfilesBackup"/>
+  </mime-type>
+</mime-info>

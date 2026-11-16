@@ -1,0 +1,7 @@
+#!/bin/sh
+# Every test in the project: service, editor and bar widget.
+set -eu
+ROOT="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+(cd "$ROOT/daemon" && cargo test)
+"$ROOT/app/bin/test"
+node --test "$ROOT/shell/streamdeck-linux.deck/tests/"

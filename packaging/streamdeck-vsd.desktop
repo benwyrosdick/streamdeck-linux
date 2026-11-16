@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Virtual Stream Deck
+Comment=A Stream Deck on your screen
+Exec=streamdeck vsd
+Icon=streamdeck
+Terminal=false
+Categories=Utility;
+StartupWMClass=streamdeck-vsd

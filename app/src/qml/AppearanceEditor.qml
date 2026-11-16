@@ -97,6 +97,8 @@ ScrollView {
 
             ColumnLayout {
                 Layout.fillWidth: true
+                // A small preferred width lets the layout shrink it so the hint wraps.
+                Layout.preferredWidth: 1
                 spacing: 2
                 Label {
                     text: editor.isDial ? qsTr("Dial icon") : qsTr("Key image")
@@ -104,6 +106,7 @@ ScrollView {
                 }
                 Label {
                     Layout.fillWidth: true
+                    Layout.maximumWidth: editor.availableWidth - 124
                     wrapMode: Text.WordWrap
                     color: Ui.faint
                     font.pixelSize: 11

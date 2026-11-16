@@ -82,5 +82,8 @@ private:
     QHash<qint64, Reply> m_replies;
     QHash<QString, int> m_revisions;
     QVariantMap m_state;
+    // Set when a state event arrives, so a slower initial getState reply
+    // cannot overwrite newer state.
+    bool m_stateFromEvent = false;
     QPointer<QJSEngine> m_engine;
 };

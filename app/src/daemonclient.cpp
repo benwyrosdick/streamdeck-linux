@@ -61,7 +61,10 @@ DaemonClient::DaemonClient(FrameStore *frames, QObject *parent, const QString &s
         m_reconnect.stop();
         setConnected(true);
         request("subscribe", {}, [](const QVariant &, const QString &) {});
+        m_stateFromEvent = false;
         request("getState", {}, [this](const QVariant &r, const QString &) {
+            if (m_stateFromEvent)
+                return;
             m_state = r.toMap();
             emit stateChanged();
         });
@@ -168,6 +171,7 @@ void DaemonClient::onLine(const QByteArray &line) {
         const QString name = msg.value("event").toString();
         const QVariant data = msg.value("data").toVariant();
         if (name == "state") {
+            m_stateFromEvent = true;
             m_state = data.toMap();
             emit stateChanged();
         }

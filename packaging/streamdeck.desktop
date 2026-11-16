@@ -1,0 +1,16 @@
+[Desktop Entry]
+Type=Application
+Name=Stream Deck
+Comment=Set up your Stream Deck keys, dials, profiles and plugins
+Exec=streamdeck %u
+Icon=streamdeck
+Terminal=false
+Categories=Utility;Settings;
+Keywords=elgato;macro;deck;keys;
+StartupWMClass=streamdeck
+MimeType=x-scheme-handler/streamdeck;application/x-streamdeck-profile;application/x-streamdeck-plugin;application/x-streamdeck-iconpack;application/x-streamdeck-backup;
+Actions=virtual;
+
+[Desktop Action virtual]
+Name=Virtual Stream Deck
+Exec=streamdeck vsd

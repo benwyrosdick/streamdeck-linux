@@ -1,0 +1,21 @@
+{
+  "title": "Stream Deck",
+  "device": "Device",
+  "profile": "Profile",
+  "folder": "In a folder",
+  "back": "Back",
+  "previousPage": "Previous page",
+  "nextPage": "Next page",
+  "pageOf": "Page %1 of %2",
+  "brightness": "Brightness %1%",
+  "sleep": "Keys off",
+  "openEditor": "Open Stream Deck",
+  "virtualDeck": "Virtual Stream Deck",
+  "startService": "Start service",
+  "serviceHint": "The Stream Deck service is not running. Start it here, or enable it with systemctl --user enable --now streamdeckd.",
+  "status.serviceDown": "Service not running",
+  "status.noDevice": "No Stream Deck connected",
+  "status.asleep": "Asleep",
+  "status.inFolder": "%1 · folder",
+  "status.page": "%1 · page %2 of %3"
+}

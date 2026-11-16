@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "streamdeck-linux.deck",
+  "name": "Stream Deck",
+  "version": "0.1.0",
+  "author": "streamdeck-linux",
+  "license": "MIT",
+  "description": "Your Stream Deck in the bar: live keys, profiles, pages and brightness",
+  "kinds": ["bar-widget"],
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "Stream Deck",
+    "description": "Shows the active Stream Deck profile. Click for a live view of the keys, profile and page switching, brightness and sleep; right-click opens the editor; scroll to turn pages.",
+    "category": "System",
+    "aliases": ["stream deck", "streamdeck", "elgato", "deck", "macro", "keys"],
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "showProfile": true
+    },
+    "schema": [
+      {
+        "key": "showProfile",
+        "type": "boolean",
+        "label": "Show the profile name next to the icon",
+        "defaultValue": true
+      }
+    ]
+  }
+}

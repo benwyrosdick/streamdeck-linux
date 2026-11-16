@@ -1,0 +1,15 @@
+post_install() {
+  cat <<'MSG'
+==> Stream Deck for Linux is installed.
+    Start the service for your user (it starts with your session from now on):
+        systemctl --user enable --now streamdeckd
+    Unplug and replug the Stream Deck once so the new access rule applies.
+    On Omarchy, put the Stream Deck widget on the bar:
+        streamdeck-omarchy-widget install
+    Then open "Stream Deck" from the app launcher.
+MSG
+}
+
+post_upgrade() {
+  echo "==> Restart the service to use the new version: systemctl --user restart streamdeckd"
+}

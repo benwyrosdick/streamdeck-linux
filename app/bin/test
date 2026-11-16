@@ -1,0 +1,8 @@
+#!/bin/sh
+set -eu
+ROOT="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+mkdir -p "$ROOT/build/tests"
+cd "$ROOT/build/tests"
+qmake6 "$ROOT/tests/streamdeck_tests.pro"
+make -j"$(nproc)" >/dev/null
+QT_QPA_PLATFORM=offscreen ./streamdeck_tests

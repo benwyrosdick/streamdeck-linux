@@ -356,6 +356,7 @@ impl Engine {
             }
             VSD_TOGGLE => {
                 self.emit("toggleVirtualDeck", json!({}));
+                self.toggle_vsd_window();
                 None
             }
             ACTION_BAR => {
@@ -747,6 +748,29 @@ impl Engine {
             d.tx.send(crate::device::RenderJob::Brightness(value)).ok();
         }
         self.emit_state();
+    }
+
+    /// Opens the Virtual Stream Deck window, or closes the one we opened.
+    pub fn toggle_vsd_window(&mut self) {
+        if let Some(pid) = self.vsd_pid.take() {
+            if unsafe { libc::kill(pid as i32, 0) } == 0 {
+                unsafe {
+                    libc::kill(pid as i32, libc::SIGTERM);
+                }
+                return;
+            }
+        }
+        let device = self.devices.values().find(|d| d.info.is_virtual).map(|d| d.info.id.clone()).unwrap_or_default();
+        match std::process::Command::new(crate::plugins::gui_binary()).arg("vsd").arg(device).stdin(std::process::Stdio::null()).spawn() {
+            Ok(mut child) => {
+                self.vsd_pid = Some(child.id());
+                // Reap the window when it closes so it does not linger as a zombie.
+                std::thread::spawn(move || {
+                    child.wait().ok();
+                });
+            }
+            Err(e) => tracing::warn!("cannot open the Virtual Stream Deck window: {e}"),
+        }
     }
 
     fn next_profile(&self, dev: &str) -> Option<Uuid> {

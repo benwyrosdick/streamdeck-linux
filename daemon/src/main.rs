@@ -183,6 +183,16 @@ async fn run() -> Result<()> {
     for v in &vsds {
         spawn_virtual(&engine, &v.id, &v.name, v.columns, v.rows);
     }
+    // Development aid: simulate hardware models without owning one,
+    // e.g. STREAMDECK_FAKE=plus,neo
+    if let Ok(list) = std::env::var("STREAMDECK_FAKE") {
+        for id in list.split(',').map(str::trim).filter(|s| !s.is_empty()) {
+            match catalog::spec(id) {
+                Some(spec) => dm.spawn_virtual(&format!("fake-{id}"), &format!("Simulated {}", spec.name), spec),
+                None => tracing::warn!("STREAMDECK_FAKE: unknown model {id}"),
+            }
+        }
+    }
     if std::env::var("STREAMDECK_NO_HARDWARE").is_err() {
         dm.spawn_hardware_watch();
     }

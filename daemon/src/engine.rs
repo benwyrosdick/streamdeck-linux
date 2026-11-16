@@ -173,6 +173,8 @@ pub struct Engine {
     monitored_running: HashSet<String>,
     global_settings: HashMap<String, Value>,
     last_backup: Option<Instant>,
+    /// The Virtual Stream Deck window the Toggle action opened, if any.
+    pub vsd_pid: Option<u32>,
 }
 
 pub fn info_payload(e: &Engine, plugin: &str) -> Value {
@@ -229,6 +231,7 @@ impl Engine {
             monitored_running: HashSet::new(),
             global_settings: HashMap::new(),
             last_backup: None,
+            vsd_pid: None,
         })
     }
 
