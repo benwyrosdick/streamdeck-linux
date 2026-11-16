@@ -1,0 +1,39 @@
+{
+  "UUID": "com.elgato.streamdeck.system.digitaltime",
+  "Name": "Digital Time",
+  "Author": "streamdeck-linux",
+  "Description": "Digital Time",
+  "Category": "Stream Deck",
+  "CategoryIcon": "Images/category",
+  "Icon": "Images/clock-list",
+  "Version": "1.0",
+  "SDKVersion": 2,
+  "PrivateAPI": true,
+  "OS": [
+    {
+      "Platform": "linux",
+      "MinimumVersion": "6"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.0"
+  },
+  "Actions": [
+    {
+      "UUID": "com.elgato.streamdeck.system.digitaltime",
+      "Name": "Digital Time",
+      "Tooltip": "Clock on the Stream Deck Neo's info bar",
+      "Icon": "Images/clock-list",
+      "Controllers": [
+        "Neo"
+      ],
+      "States": [
+        {
+          "Image": "Images/clock",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ]
+    }
+  ]
+}

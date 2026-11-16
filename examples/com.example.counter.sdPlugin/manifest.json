@@ -1,0 +1,26 @@
+{
+  "UUID": "com.example.counter",
+  "Name": "Counter",
+  "Author": "streamdeck-linux",
+  "Description": "Example plugin: counts presses. Exercises the SDK events this port implements.",
+  "Version": "1.0.0",
+  "SDKVersion": 2,
+  "Icon": "icon",
+  "Category": "Examples",
+  "CodePath": "plugin.js",
+  "Nodejs": { "Version": "20" },
+  "OS": [{ "Platform": "linux", "MinimumVersion": "6" }],
+  "Software": { "MinimumVersion": "6.4" },
+  "Actions": [
+    {
+      "UUID": "com.example.counter.count",
+      "Name": "Count",
+      "Tooltip": "Counts key presses; turn a dial to count by more",
+      "Icon": "icon",
+      "PropertyInspectorPath": "pi.html",
+      "Controllers": ["Keypad", "Encoder"],
+      "Encoder": { "layout": "$B1", "TriggerDescription": { "Rotate": "Add or subtract", "Push": "Reset" } },
+      "States": [{ "Image": "key", "TitleAlignment": "middle", "FontSize": 24 }]
+    }
+  ]
+}

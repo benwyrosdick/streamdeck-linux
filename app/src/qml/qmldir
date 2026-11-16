@@ -1,0 +1,21 @@
+singleton Store 1.0 Store.qml
+singleton Ui 1.0 Ui.qml
+TopBar 1.0 TopBar.qml
+PageBar 1.0 PageBar.qml
+DeviceCanvas 1.0 DeviceCanvas.qml
+KeyCell 1.0 KeyCell.qml
+ActionList 1.0 ActionList.qml
+Inspector 1.0 Inspector.qml
+AppearanceEditor 1.0 AppearanceEditor.qml
+PluginInspector 1.0 PluginInspector.qml
+BuiltinInspector 1.0 BuiltinInspector.qml
+ChildActions 1.0 ChildActions.qml
+HotkeyField 1.0 HotkeyField.qml
+AppPicker 1.0 AppPicker.qml
+IconLibrary 1.0 IconLibrary.qml
+ColorField 1.0 ColorField.qml
+Preferences 1.0 Preferences.qml
+Toasts 1.0 Toasts.qml
+HelpOverlay 1.0 HelpOverlay.qml
+FieldLabel 1.0 FieldLabel.qml
+DragGhost 1.0 DragGhost.qml

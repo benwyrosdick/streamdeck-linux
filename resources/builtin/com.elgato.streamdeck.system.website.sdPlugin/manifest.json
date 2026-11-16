@@ -1,0 +1,39 @@
+{
+  "UUID": "com.elgato.streamdeck.system.website",
+  "Name": "Website",
+  "Author": "streamdeck-linux",
+  "Description": "Website",
+  "Category": "System",
+  "CategoryIcon": "Images/category",
+  "Icon": "Images/website-list",
+  "Version": "1.0",
+  "SDKVersion": 2,
+  "PrivateAPI": true,
+  "OS": [
+    {
+      "Platform": "linux",
+      "MinimumVersion": "6"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.0"
+  },
+  "Actions": [
+    {
+      "UUID": "com.elgato.streamdeck.system.website",
+      "Name": "Website",
+      "Tooltip": "Open a web page, or call a URL in the background",
+      "Icon": "Images/website-list",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "Images/website",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ]
+    }
+  ]
+}

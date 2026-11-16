@@ -1,0 +1,39 @@
+{
+  "UUID": "com.elgato.streamdeck.system.pagination",
+  "Name": "Page Indicator (Neo)",
+  "Author": "streamdeck-linux",
+  "Description": "Page Indicator (Neo)",
+  "Category": "Stream Deck",
+  "CategoryIcon": "Images/category",
+  "Icon": "Images/dots-list",
+  "Version": "1.0",
+  "SDKVersion": 2,
+  "PrivateAPI": true,
+  "OS": [
+    {
+      "Platform": "linux",
+      "MinimumVersion": "6"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.0"
+  },
+  "Actions": [
+    {
+      "UUID": "com.elgato.streamdeck.system.pagination",
+      "Name": "Page Indicator",
+      "Tooltip": "Page dots on the Stream Deck Neo's info bar",
+      "Icon": "Images/dots-list",
+      "Controllers": [
+        "Neo"
+      ],
+      "States": [
+        {
+          "Image": "Images/dots",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ]
+    }
+  ]
+}

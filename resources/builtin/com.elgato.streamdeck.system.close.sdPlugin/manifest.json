@@ -1,0 +1,39 @@
+{
+  "UUID": "com.elgato.streamdeck.system.close",
+  "Name": "Close",
+  "Author": "streamdeck-linux",
+  "Description": "Close",
+  "Category": "System",
+  "CategoryIcon": "Images/category",
+  "Icon": "Images/close-list",
+  "Version": "1.0",
+  "SDKVersion": 2,
+  "PrivateAPI": true,
+  "OS": [
+    {
+      "Platform": "linux",
+      "MinimumVersion": "6"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.0"
+  },
+  "Actions": [
+    {
+      "UUID": "com.elgato.streamdeck.system.close",
+      "Name": "Close",
+      "Tooltip": "Close every window of an application",
+      "Icon": "Images/close-list",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "Images/close",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ]
+    }
+  ]
+}

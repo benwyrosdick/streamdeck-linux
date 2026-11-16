@@ -1,0 +1,10 @@
+#!/bin/sh
+# Runs a development streamdeckd with throwaway data and no hardware access,
+# so it never competes with another program for a real Stream Deck.
+# The control socket is the normal one, so the editor and the bar widget find it.
+root="$(cd "$(dirname "$0")/.." && pwd)"
+export STREAMDECK_DATA_DIR="${STREAMDECK_DATA_DIR:-/tmp/sdtest/data}"
+export STREAMDECK_CONFIG_DIR="${STREAMDECK_CONFIG_DIR:-/tmp/sdtest/config}"
+export STREAMDECK_RESOURCES="$root/resources"
+export STREAMDECK_NO_HARDWARE=1
+exec "$root/daemon/target/debug/streamdeckd" "$@"

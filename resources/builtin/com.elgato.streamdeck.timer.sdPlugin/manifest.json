@@ -1,0 +1,45 @@
+{
+  "UUID": "com.elgato.streamdeck.timer",
+  "Name": "Timer",
+  "Author": "streamdeck-linux",
+  "Description": "Timer",
+  "Category": "System",
+  "CategoryIcon": "Images/category",
+  "Icon": "Images/timer-list",
+  "Version": "1.0",
+  "SDKVersion": 2,
+  "PrivateAPI": true,
+  "OS": [
+    {
+      "Platform": "linux",
+      "MinimumVersion": "6"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.0"
+  },
+  "Actions": [
+    {
+      "UUID": "com.elgato.streamdeck.system.timer",
+      "Name": "Timer",
+      "Tooltip": "A countdown on the key: press to start or pause, hold to reset",
+      "Icon": "Images/timer-list",
+      "Controllers": [
+        "Keypad",
+        "Encoder"
+      ],
+      "States": [
+        {
+          "Image": "Images/timer",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ],
+      "Encoder": {
+        "layout": "$X1",
+        "Icon": "Images/timer-list"
+      },
+      "SupportedInMultiActions": false
+    }
+  ]
+}

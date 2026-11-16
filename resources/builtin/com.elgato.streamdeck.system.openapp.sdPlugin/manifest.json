@@ -1,0 +1,39 @@
+{
+  "UUID": "com.elgato.streamdeck.system.openapp",
+  "Name": "Open Application",
+  "Author": "streamdeck-linux",
+  "Description": "Open Application",
+  "Category": "System",
+  "CategoryIcon": "Images/category",
+  "Icon": "Images/app-list",
+  "Version": "1.0",
+  "SDKVersion": 2,
+  "PrivateAPI": true,
+  "OS": [
+    {
+      "Platform": "linux",
+      "MinimumVersion": "6"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.0"
+  },
+  "Actions": [
+    {
+      "UUID": "com.elgato.streamdeck.system.openapp",
+      "Name": "Open Application",
+      "Tooltip": "Open or focus an application; hold to quit it",
+      "Icon": "Images/app-list",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "Images/app",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ]
+    }
+  ]
+}

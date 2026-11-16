@@ -1,0 +1,39 @@
+{
+  "UUID": "com.elgato.streamdeck.system.open",
+  "Name": "Open",
+  "Author": "streamdeck-linux",
+  "Description": "Open",
+  "Category": "System",
+  "CategoryIcon": "Images/category",
+  "Icon": "Images/open-list",
+  "Version": "1.0",
+  "SDKVersion": 2,
+  "PrivateAPI": true,
+  "OS": [
+    {
+      "Platform": "linux",
+      "MinimumVersion": "6"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.0"
+  },
+  "Actions": [
+    {
+      "UUID": "com.elgato.streamdeck.system.open",
+      "Name": "Open",
+      "Tooltip": "Open a file, folder, program or command",
+      "Icon": "Images/open-list",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "Images/open",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { font: 13px system-ui, sans-serif; color: #ddd; background: transparent; margin: 8px; }
+  label { display: flex; gap: 8px; align-items: center; margin: 6px 0; }
+  input { width: 60px; }
+</style>
+</head>
+<body>
+  <label>Step <input id="step" type="number" min="1" value="1"></label>
+  <label>Count <span id="count">–</span></label>
+  <button id="reset">Reset</button>
+<script>
+  let ws, uuid, action, settings = {};
+  // The host calls this, exactly as the original app does.
+  function connectElgatoStreamDeckSocket(port, inUUID, registerEvent, info, actionInfo) {
+    uuid = inUUID;
+    const ai = JSON.parse(actionInfo);
+    action = ai.action;
+    settings = ai.payload.settings || {};
+    document.getElementById("step").value = settings.step ?? 1;
+    ws = new WebSocket("ws://127.0.0.1:" + port);
+    ws.onopen = () => {
+      ws.send(JSON.stringify({ event: registerEvent, uuid }));
+      ws.send(JSON.stringify({ event: "sendToPlugin", action, context: uuid, payload: {} }));
+    };
+    ws.onmessage = (e) => {
+      const m = JSON.parse(e.data);
+      if (m.event === "sendToPropertyInspector") document.getElementById("count").textContent = m.payload.count;
+      if (m.event === "didReceiveSettings") settings = m.payload.settings;
+    };
+  }
+  document.getElementById("step").addEventListener("change", (e) => {
+    settings.step = Number(e.target.value) || 1;
+    ws.send(JSON.stringify({ event: "setSettings", context: uuid, payload: settings }));
+  });
+  document.getElementById("reset").addEventListener("click", () => {
+    ws.send(JSON.stringify({ event: "sendToPlugin", action, context: uuid, payload: { reset: true } }));
+  });
+</script>
+</body>
+</html>

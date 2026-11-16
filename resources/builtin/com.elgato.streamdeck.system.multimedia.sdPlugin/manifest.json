@@ -1,0 +1,48 @@
+{
+  "UUID": "com.elgato.streamdeck.system.multimedia",
+  "Name": "Multimedia",
+  "Author": "streamdeck-linux",
+  "Description": "Multimedia",
+  "Category": "System",
+  "CategoryIcon": "Images/category",
+  "Icon": "Images/media-list",
+  "Version": "1.0",
+  "SDKVersion": 2,
+  "PrivateAPI": true,
+  "OS": [
+    {
+      "Platform": "linux",
+      "MinimumVersion": "6"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.0"
+  },
+  "Actions": [
+    {
+      "UUID": "com.elgato.streamdeck.system.multimedia",
+      "Name": "Multimedia",
+      "Tooltip": "Media keys: play, skip, volume, brightness",
+      "Icon": "Images/media-list",
+      "Controllers": [
+        "Keypad",
+        "Encoder"
+      ],
+      "States": [
+        {
+          "Image": "Images/media",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ],
+      "Encoder": {
+        "layout": "$X1",
+        "Icon": "Images/media-list",
+        "TriggerDescription": {
+          "Rotate": "Adjust",
+          "Push": "Toggle"
+        }
+      }
+    }
+  ]
+}

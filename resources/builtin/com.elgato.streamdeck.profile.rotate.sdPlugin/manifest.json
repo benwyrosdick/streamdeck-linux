@@ -1,0 +1,44 @@
+{
+  "UUID": "com.elgato.streamdeck.profile.rotate",
+  "Name": "Switch Profile",
+  "Author": "streamdeck-linux",
+  "Description": "Switch Profile",
+  "Category": "Stream Deck",
+  "CategoryIcon": "Images/category",
+  "Icon": "Images/profile-list",
+  "Version": "1.0",
+  "SDKVersion": 2,
+  "PrivateAPI": true,
+  "OS": [
+    {
+      "Platform": "linux",
+      "MinimumVersion": "6"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.0"
+  },
+  "Actions": [
+    {
+      "UUID": "com.elgato.streamdeck.profile.rotate",
+      "Name": "Switch Profile",
+      "Tooltip": "Change to another profile",
+      "Icon": "Images/profile-list",
+      "Controllers": [
+        "Keypad",
+        "Encoder"
+      ],
+      "States": [
+        {
+          "Image": "Images/profile",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ],
+      "Encoder": {
+        "layout": "$X1",
+        "Icon": "Images/profile-list"
+      }
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "UUID": "com.elgato.streamdeck.keys",
+  "Name": "Keys",
+  "Author": "streamdeck-linux",
+  "Description": "Keys",
+  "Category": "Stream Deck",
+  "CategoryIcon": "Images/category",
+  "Icon": "Images/key-logic-list",
+  "Version": "1.0",
+  "SDKVersion": 2,
+  "PrivateAPI": true,
+  "OS": [
+    {
+      "Platform": "linux",
+      "MinimumVersion": "6"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.0"
+  },
+  "Actions": [
+    {
+      "UUID": "com.elgato.streamdeck.keys.logic",
+      "Name": "Key Logic",
+      "Tooltip": "Different actions for press, double press and hold",
+      "Icon": "Images/key-logic-list",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "Images/key-logic",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "SupportedInKeyLogicActions": false
+    },
+    {
+      "UUID": "com.elgato.streamdeck.keys.stack",
+      "Name": "Action Wheel",
+      "Tooltip": "Several key actions on one dial: rotate to choose, push to run",
+      "Icon": "Images/action-wheel-list",
+      "Controllers": [
+        "Encoder"
+      ],
+      "States": [
+        {
+          "Image": "Images/action-wheel",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ],
+      "Encoder": {
+        "layout": "$X1",
+        "Icon": "Images/action-wheel-list",
+        "TriggerDescription": {
+          "Rotate": "Choose action",
+          "Push": "Run action"
+        }
+      }
+    },
+    {
+      "UUID": "com.elgato.streamdeck.keys.adaptor",
+      "Name": "Action Trigger",
+      "Tooltip": "Run key actions by turning, pushing or touching a dial",
+      "Icon": "Images/action-trigger-list",
+      "Controllers": [
+        "Encoder"
+      ],
+      "States": [
+        {
+          "Image": "Images/action-trigger",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ],
+      "Encoder": {
+        "layout": "$X1",
+        "Icon": "Images/action-trigger-list",
+        "TriggerDescription": {
+          "Rotate": "Run left/right action",
+          "Push": "Run push action",
+          "Touch": "Run touch action"
+        }
+      }
+    }
+  ]
+}

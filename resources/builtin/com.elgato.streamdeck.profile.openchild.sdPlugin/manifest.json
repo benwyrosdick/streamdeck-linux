@@ -1,0 +1,41 @@
+{
+  "UUID": "com.elgato.streamdeck.profile.openchild",
+  "Name": "Create Folder",
+  "Author": "streamdeck-linux",
+  "Description": "Create Folder",
+  "Category": "Stream Deck",
+  "CategoryIcon": "Images/category",
+  "Icon": "Images/folder-list",
+  "Version": "1.0",
+  "SDKVersion": 2,
+  "PrivateAPI": true,
+  "OS": [
+    {
+      "Platform": "linux",
+      "MinimumVersion": "6"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.0"
+  },
+  "Actions": [
+    {
+      "UUID": "com.elgato.streamdeck.profile.openchild",
+      "Name": "Create Folder",
+      "Tooltip": "A key that opens a folder of more keys",
+      "Icon": "Images/folder-list",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "Images/folder",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "SupportedInKeyLogicActions": false
+    }
+  ]
+}

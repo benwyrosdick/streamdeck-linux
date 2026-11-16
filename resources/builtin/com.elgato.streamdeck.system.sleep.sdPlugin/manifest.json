@@ -1,0 +1,39 @@
+{
+  "UUID": "com.elgato.streamdeck.system.sleep",
+  "Name": "Sleep",
+  "Author": "streamdeck-linux",
+  "Description": "Sleep",
+  "Category": "Stream Deck",
+  "CategoryIcon": "Images/category",
+  "Icon": "Images/sleep-list",
+  "Version": "1.0",
+  "SDKVersion": 2,
+  "PrivateAPI": true,
+  "OS": [
+    {
+      "Platform": "linux",
+      "MinimumVersion": "6"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.0"
+  },
+  "Actions": [
+    {
+      "UUID": "com.elgato.streamdeck.system.sleep",
+      "Name": "Sleep",
+      "Tooltip": "Turn the Stream Deck's keys off until the next press",
+      "Icon": "Images/sleep-list",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "Images/sleep",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ]
+    }
+  ]
+}

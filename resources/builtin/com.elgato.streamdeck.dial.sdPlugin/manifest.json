@@ -1,0 +1,46 @@
+{
+  "UUID": "com.elgato.streamdeck.dial",
+  "Name": "Dials",
+  "Author": "streamdeck-linux",
+  "Description": "Dials",
+  "Category": "Stream Deck",
+  "CategoryIcon": "Images/category",
+  "Icon": "Images/dial-stack-list",
+  "Version": "1.0",
+  "SDKVersion": 2,
+  "PrivateAPI": true,
+  "OS": [
+    {
+      "Platform": "linux",
+      "MinimumVersion": "6"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.0"
+  },
+  "Actions": [
+    {
+      "UUID": "com.elgato.streamdeck.dial.stack",
+      "Name": "Dial Stack",
+      "Tooltip": "Several dial actions on one dial; push to switch",
+      "Icon": "Images/dial-stack-list",
+      "Controllers": [
+        "Encoder"
+      ],
+      "States": [
+        {
+          "Image": "Images/dial-stack",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ],
+      "Encoder": {
+        "layout": "$X1",
+        "Icon": "Images/dial-stack-list",
+        "TriggerDescription": {
+          "Push": "Next action"
+        }
+      }
+    }
+  ]
+}

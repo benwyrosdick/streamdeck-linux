@@ -1,0 +1,39 @@
+[package]
+name = "streamdeckd"
+version = "0.1.0"
+edition = "2021"
+description = "Stream Deck service for Linux: devices, profiles, built-in actions and the Stream Deck SDK plugin host"
+license = "MIT"
+
+[[bin]]
+name = "streamdeckd"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1"
+base64 = "0.22"
+chrono = { version = "0.4", features = ["clock"] }
+dirs = "6"
+elgato-streamdeck = { version = "0.14", features = ["async"] }
+evdev = "0.13"
+futures-util = { version = "0.3", features = ["sink"] }
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "gif", "bmp", "webp", "ico"] }
+libc = "0.2"
+rand = "0.9"
+resvg = "0.50"
+rodio = { version = "0.23", default-features = false, features = ["playback", "flac", "mp3", "mp4", "vorbis", "wav"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order"] }
+tokio = { version = "1", features = ["full"] }
+tokio-tungstenite = "0.30"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+uuid = { version = "1", features = ["v4", "serde"] }
+zip = { version = "6", default-features = false, features = ["deflate"] }
+url = "2"
+percent-encoding = "2"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+strip = true

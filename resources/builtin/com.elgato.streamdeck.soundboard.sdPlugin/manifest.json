@@ -1,0 +1,65 @@
+{
+  "UUID": "com.elgato.streamdeck.soundboard",
+  "Name": "Soundboard",
+  "Author": "streamdeck-linux",
+  "Description": "Soundboard",
+  "Category": "Soundboard",
+  "CategoryIcon": "Images/category",
+  "Icon": "Images/play-audio-list",
+  "Version": "1.0",
+  "SDKVersion": 2,
+  "PrivateAPI": true,
+  "OS": [
+    {
+      "Platform": "linux",
+      "MinimumVersion": "6"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.0"
+  },
+  "Actions": [
+    {
+      "UUID": "com.elgato.streamdeck.soundboard.playaudio",
+      "Name": "Play Audio",
+      "Tooltip": "Play a sound file, or a random one from a folder",
+      "Icon": "Images/play-audio-list",
+      "Controllers": [
+        "Keypad",
+        "Encoder"
+      ],
+      "States": [
+        {
+          "Image": "Images/play-audio",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ],
+      "Encoder": {
+        "layout": "$X1",
+        "Icon": "Images/play-audio-list"
+      }
+    },
+    {
+      "UUID": "com.elgato.streamdeck.soundboard.stopaudioplay",
+      "Name": "Stop Audio",
+      "Tooltip": "Stop everything the soundboard is playing",
+      "Icon": "Images/stop-audio-list",
+      "Controllers": [
+        "Keypad",
+        "Encoder"
+      ],
+      "States": [
+        {
+          "Image": "Images/stop-audio",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ],
+      "Encoder": {
+        "layout": "$X1",
+        "Icon": "Images/stop-audio-list"
+      }
+    }
+  ]
+}

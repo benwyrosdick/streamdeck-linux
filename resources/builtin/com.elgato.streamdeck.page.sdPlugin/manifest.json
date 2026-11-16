@@ -1,0 +1,106 @@
+{
+  "UUID": "com.elgato.streamdeck.page",
+  "Name": "Pages",
+  "Author": "streamdeck-linux",
+  "Description": "Pages",
+  "Category": "Stream Deck",
+  "CategoryIcon": "Images/category",
+  "Icon": "Images/page-prev-list",
+  "Version": "1.0",
+  "SDKVersion": 2,
+  "PrivateAPI": true,
+  "OS": [
+    {
+      "Platform": "linux",
+      "MinimumVersion": "6"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.0"
+  },
+  "Actions": [
+    {
+      "UUID": "com.elgato.streamdeck.page.previous",
+      "Name": "Previous Page",
+      "Tooltip": "Go to the previous page",
+      "Icon": "Images/page-prev-list",
+      "Controllers": [
+        "Keypad",
+        "Encoder"
+      ],
+      "States": [
+        {
+          "Image": "Images/page-prev",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ],
+      "Encoder": {
+        "layout": "$X1",
+        "Icon": "Images/page-prev-list"
+      },
+      "SupportedInMultiActions": false
+    },
+    {
+      "UUID": "com.elgato.streamdeck.page.next",
+      "Name": "Next Page",
+      "Tooltip": "Go to the next page",
+      "Icon": "Images/page-next-list",
+      "Controllers": [
+        "Keypad",
+        "Encoder"
+      ],
+      "States": [
+        {
+          "Image": "Images/page-next",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ],
+      "Encoder": {
+        "layout": "$X1",
+        "Icon": "Images/page-next-list"
+      },
+      "SupportedInMultiActions": false
+    },
+    {
+      "UUID": "com.elgato.streamdeck.page.goto",
+      "Name": "Go to Page",
+      "Tooltip": "Jump to a page of this profile",
+      "Icon": "Images/page-goto-list",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "Images/page-goto",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ],
+      "SupportedInMultiActions": false
+    },
+    {
+      "UUID": "com.elgato.streamdeck.page.indicator",
+      "Name": "Page Indicator",
+      "Tooltip": "Show the current page; press for the next",
+      "Icon": "Images/page-indicator-list",
+      "Controllers": [
+        "Keypad",
+        "Encoder"
+      ],
+      "States": [
+        {
+          "Image": "Images/page-indicator",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ],
+      "Encoder": {
+        "layout": "$X1",
+        "Icon": "Images/page-indicator-list"
+      },
+      "SupportedInMultiActions": false
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "UUID": "com.elgato.streamdeck.profile.backtoparent",
+  "Name": "Parent Folder",
+  "Author": "streamdeck-linux",
+  "Description": "Parent Folder",
+  "Category": "Stream Deck",
+  "CategoryIcon": "Images/category",
+  "Icon": "Images/parent-list",
+  "Version": "1.0",
+  "SDKVersion": 2,
+  "PrivateAPI": true,
+  "OS": [
+    {
+      "Platform": "linux",
+      "MinimumVersion": "6"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.0"
+  },
+  "Actions": [
+    {
+      "UUID": "com.elgato.streamdeck.profile.backtoparent",
+      "Name": "Parent Folder",
+      "Tooltip": "Leave the folder",
+      "Icon": "Images/parent-list",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "Images/parent",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "VisibleInActionsList": false
+    }
+  ]
+}

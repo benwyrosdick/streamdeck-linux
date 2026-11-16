@@ -1,0 +1,49 @@
+{
+  "UUID": "com.elgato.streamdeck.system.hotkey",
+  "Name": "Hotkey",
+  "Author": "streamdeck-linux",
+  "Description": "Hotkey",
+  "Category": "System",
+  "CategoryIcon": "Images/category",
+  "Icon": "Images/keyboard-list",
+  "Version": "1.0",
+  "SDKVersion": 2,
+  "PrivateAPI": true,
+  "OS": [
+    {
+      "Platform": "linux",
+      "MinimumVersion": "6"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.0"
+  },
+  "Actions": [
+    {
+      "UUID": "com.elgato.streamdeck.system.hotkey",
+      "Name": "Hotkey",
+      "Tooltip": "Press a key combination; on a dial, rotate or push to send one",
+      "Icon": "Images/keyboard-list",
+      "Controllers": [
+        "Keypad",
+        "Encoder"
+      ],
+      "States": [
+        {
+          "Image": "Images/keyboard",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ],
+      "Encoder": {
+        "layout": "$X1",
+        "Icon": "Images/keyboard-list",
+        "TriggerDescription": {
+          "Rotate": "Send left/right hotkey",
+          "Push": "Send push hotkey",
+          "Touch": "Send touch hotkey"
+        }
+      }
+    }
+  ]
+}

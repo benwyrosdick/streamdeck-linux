@@ -1,0 +1,48 @@
+{
+  "UUID": "com.elgato.streamdeck.system.keybrightness",
+  "Name": "Brightness",
+  "Author": "streamdeck-linux",
+  "Description": "Brightness",
+  "Category": "Stream Deck",
+  "CategoryIcon": "Images/category",
+  "Icon": "Images/brightness-list",
+  "Version": "1.0",
+  "SDKVersion": 2,
+  "PrivateAPI": true,
+  "OS": [
+    {
+      "Platform": "linux",
+      "MinimumVersion": "6"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.0"
+  },
+  "Actions": [
+    {
+      "UUID": "com.elgato.streamdeck.system.keybrightness",
+      "Name": "Brightness",
+      "Tooltip": "Change the Stream Deck's brightness",
+      "Icon": "Images/brightness-list",
+      "Controllers": [
+        "Keypad",
+        "Encoder"
+      ],
+      "States": [
+        {
+          "Image": "Images/brightness",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ],
+      "Encoder": {
+        "layout": "$X1",
+        "Icon": "Images/brightness-list",
+        "TriggerDescription": {
+          "Rotate": "Adjust brightness",
+          "Push": "Dim / full"
+        }
+      }
+    }
+  ]
+}

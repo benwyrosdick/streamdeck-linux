@@ -1,0 +1,39 @@
+{
+  "UUID": "com.elgato.streamdeck.system.text",
+  "Name": "Text",
+  "Author": "streamdeck-linux",
+  "Description": "Text",
+  "Category": "System",
+  "CategoryIcon": "Images/category",
+  "Icon": "Images/text-list",
+  "Version": "1.0",
+  "SDKVersion": 2,
+  "PrivateAPI": true,
+  "OS": [
+    {
+      "Platform": "linux",
+      "MinimumVersion": "6"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.0"
+  },
+  "Actions": [
+    {
+      "UUID": "com.elgato.streamdeck.system.text",
+      "Name": "Text",
+      "Tooltip": "Type or paste a piece of text",
+      "Icon": "Images/text-list",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "Images/text",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ]
+    }
+  ]
+}

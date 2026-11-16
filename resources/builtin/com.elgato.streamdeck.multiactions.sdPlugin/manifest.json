@@ -1,0 +1,99 @@
+{
+  "UUID": "com.elgato.streamdeck.multiactions",
+  "Name": "Multi Action",
+  "Author": "streamdeck-linux",
+  "Description": "Multi Action",
+  "Category": "Multi Action",
+  "CategoryIcon": "Images/category",
+  "Icon": "Images/multi-list",
+  "Version": "1.0",
+  "SDKVersion": 2,
+  "PrivateAPI": true,
+  "OS": [
+    {
+      "Platform": "linux",
+      "MinimumVersion": "6"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.0"
+  },
+  "Actions": [
+    {
+      "UUID": "com.elgato.streamdeck.multiactions.routine",
+      "Name": "Multi Action",
+      "Tooltip": "Run several actions in a row",
+      "Icon": "Images/multi-list",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "Images/multi",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "SupportedInKeyLogicActions": false
+    },
+    {
+      "UUID": "com.elgato.streamdeck.multiactions.routine2",
+      "Name": "Multi Action Switch",
+      "Tooltip": "Alternate between two lists of actions",
+      "Icon": "Images/multi-switch-list",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "Images/multi-switch",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        },
+        {
+          "Image": "Images/multi-switch",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "SupportedInKeyLogicActions": false
+    },
+    {
+      "UUID": "com.elgato.streamdeck.multiactions.random",
+      "Name": "Random Action",
+      "Tooltip": "Run one action picked at random",
+      "Icon": "Images/random-list",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "Images/random",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "SupportedInKeyLogicActions": false
+    },
+    {
+      "UUID": "com.elgato.streamdeck.multiactions.delay",
+      "Name": "Delay",
+      "Tooltip": "Wait before the next action in a multi action",
+      "Icon": "Images/delay-list",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "Images/delay",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ],
+      "VisibleInActionsList": false
+    }
+  ]
+}

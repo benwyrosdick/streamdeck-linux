@@ -1,0 +1,46 @@
+{
+  "UUID": "com.elgato.streamdeck.system.mouse",
+  "Name": "Mouse",
+  "Author": "streamdeck-linux",
+  "Description": "Mouse",
+  "Category": "System",
+  "CategoryIcon": "Images/category",
+  "Icon": "Images/wheel-list",
+  "Version": "1.0",
+  "SDKVersion": 2,
+  "PrivateAPI": true,
+  "OS": [
+    {
+      "Platform": "linux",
+      "MinimumVersion": "6"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.0"
+  },
+  "Actions": [
+    {
+      "UUID": "com.elgato.streamdeck.system.mouse-wheel",
+      "Name": "Mouse Wheel",
+      "Tooltip": "Scroll with a dial",
+      "Icon": "Images/wheel-list",
+      "Controllers": [
+        "Encoder"
+      ],
+      "States": [
+        {
+          "Image": "Images/wheel",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ],
+      "Encoder": {
+        "layout": "$X1",
+        "Icon": "Images/wheel-list",
+        "TriggerDescription": {
+          "Rotate": "Scroll"
+        }
+      }
+    }
+  ]
+}

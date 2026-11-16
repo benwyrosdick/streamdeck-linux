@@ -1,0 +1,44 @@
+{
+  "UUID": "com.elgato.streamdeck.system.actionbar",
+  "Name": "Action Bar",
+  "Author": "streamdeck-linux",
+  "Description": "Action Bar",
+  "Category": "Stream Deck",
+  "CategoryIcon": "Images/category",
+  "Icon": "Images/action-bar-list",
+  "Version": "1.0",
+  "SDKVersion": 2,
+  "PrivateAPI": true,
+  "OS": [
+    {
+      "Platform": "linux",
+      "MinimumVersion": "6"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.0"
+  },
+  "Actions": [
+    {
+      "UUID": "com.elgato.streamdeck.system.actionbar",
+      "Name": "Action Bar",
+      "Tooltip": "Show or hide the Virtual Stream Deck's action bar",
+      "Icon": "Images/action-bar-list",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "Images/action-bar",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        },
+        {
+          "Image": "Images/action-bar",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ]
+    }
+  ]
+}

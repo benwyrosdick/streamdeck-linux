@@ -1,0 +1,45 @@
+{
+  "UUID": "com.elgato.streamdeck.system.hotkeyswitch",
+  "Name": "Hotkey Switch",
+  "Author": "streamdeck-linux",
+  "Description": "Hotkey Switch",
+  "Category": "System",
+  "CategoryIcon": "Images/category",
+  "Icon": "Images/keyboard-switch-list",
+  "Version": "1.0",
+  "SDKVersion": 2,
+  "PrivateAPI": true,
+  "OS": [
+    {
+      "Platform": "linux",
+      "MinimumVersion": "6"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.0"
+  },
+  "Actions": [
+    {
+      "UUID": "com.elgato.streamdeck.system.hotkeyswitch",
+      "Name": "Hotkey Switch",
+      "Tooltip": "Alternate between two key combinations",
+      "Icon": "Images/keyboard-switch-list",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "Images/keyboard-switch",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        },
+        {
+          "Image": "Images/keyboard-switch",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ],
+      "SupportedInMultiActions": false
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "UUID": "com.elgato.streamdeck.vsdtoggle",
+  "Name": "Virtual Stream Deck",
+  "Author": "streamdeck-linux",
+  "Description": "Virtual Stream Deck",
+  "Category": "Stream Deck",
+  "CategoryIcon": "Images/category",
+  "Icon": "Images/vsd-list",
+  "Version": "1.0",
+  "SDKVersion": 2,
+  "PrivateAPI": true,
+  "OS": [
+    {
+      "Platform": "linux",
+      "MinimumVersion": "6"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.0"
+  },
+  "Actions": [
+    {
+      "UUID": "com.elgato.streamdeck.system.vsdtoggle",
+      "Name": "Toggle Virtual Stream Deck",
+      "Tooltip": "Show or hide the Virtual Stream Deck",
+      "Icon": "Images/vsd-list",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "Images/vsd",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ]
+    }
+  ]
+}

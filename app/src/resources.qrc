@@ -1,0 +1,30 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Main.qml</file>
+        <file>VirtualDeckWindow.qml</file>
+        <file>i18n/en.json</file>
+        <file>icons/streamdeck.svg</file>
+        <file>qml/ActionList.qml</file>
+        <file>qml/AppPicker.qml</file>
+        <file>qml/AppearanceEditor.qml</file>
+        <file>qml/BuiltinInspector.qml</file>
+        <file>qml/ChildActions.qml</file>
+        <file>qml/ColorField.qml</file>
+        <file>qml/DeviceCanvas.qml</file>
+        <file>qml/DragGhost.qml</file>
+        <file>qml/FieldLabel.qml</file>
+        <file>qml/HelpOverlay.qml</file>
+        <file>qml/HotkeyField.qml</file>
+        <file>qml/IconLibrary.qml</file>
+        <file>qml/Inspector.qml</file>
+        <file>qml/KeyCell.qml</file>
+        <file>qml/PageBar.qml</file>
+        <file>qml/Ui.qml</file>
+        <file>qml/PluginInspector.qml</file>
+        <file>qml/Preferences.qml</file>
+        <file>qml/Store.qml</file>
+        <file>qml/Toasts.qml</file>
+        <file>qml/TopBar.qml</file>
+        <file>qml/qmldir</file>
+    </qresource>
+</RCC>

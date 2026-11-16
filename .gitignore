@@ -1,0 +1,8 @@
+*.pkg
+/daemon/target
+/app/build
+/pkgbuild/src
+/pkgbuild/pkg
+*.pkg.tar.zst
+/app/build/
+/shell/**/node_modules/
