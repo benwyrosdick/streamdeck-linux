@@ -1,0 +1,84 @@
+packaging/streamdeck-omarchy-widget
+  s_44ffab570ddd70::t_90f71acb8bea7a 1-52
+packaging/streamdeck-linux.xml
+  s_44ffab570ddd70::t_90f71acb8bea7a 1-23
+bin/install
+  s_44ffab570ddd70::t_45b0b75e7d6ce5 1-6
+bin/test
+  s_44ffab570ddd70::t_45b0b75e7d6ce5 1-7
+app/src/daemonclient.cpp
+  s_44ffab570ddd70::t_33549925537eb3 64,66-67,174
+pkgbuild/PKGBUILD
+  s_44ffab570ddd70::t_45b0b75e7d6ce5 1-17,20-63
+  s_44ffab570ddd70::t_fbd0c8704a774c 18-19
+shell/streamdeck-linux.deck/manifest.json
+  s_44ffab570ddd70::t_58cc9d1e6c19dd 1-32
+daemon/src/main.rs
+  s_44ffab570ddd70::t_b2a8dbbc14564a 186-195
+shell/streamdeck-linux.deck/Panel.qml
+  s_44ffab570ddd70::t_cda8ae99cc7052 142-143
+  s_44ffab570ddd70::t_58cc9d1e6c19dd 153,167
+  s_44ffab570ddd70::t_5b1d695bab97ed 1-20,23-129,132,144-146,148-150,168-171,173-415
+  s_44ffab570ddd70::t_eb3014bf95350f 130-131,133-141,147,151-152,154-166,172
+  s_44ffab570ddd70::t_a1fee04d0558f1 21-22
+app/tests/streamdeck_tests.cpp
+  s_44ffab570ddd70::t_1f9684f56ecda2 1-95,97-175
+  s_44ffab570ddd70::t_33549925537eb3 96
+app/src/qml/Store.qml
+  s_44ffab570ddd70::t_6cee49e35d11e1 80-81
+daemon/src/builtins.rs
+  s_44ffab570ddd70::t_5d745ca43e55fd 765-771
+  s_44ffab570ddd70::t_81d7caf8e38808 359,753-764,772-773
+  s_44ffab570ddd70::t_b26b43f6a315b8 774-775
+app/tests/streamdeck_tests.pro
+  s_44ffab570ddd70::t_1f9684f56ecda2 1-10
+shell/streamdeck-linux.deck/i18n/en.json
+  s_44ffab570ddd70::t_58cc9d1e6c19dd 1-21
+packaging/streamdeck.desktop
+  s_44ffab570ddd70::t_90f71acb8bea7a 1-16
+packaging/streamdeckd.service
+  s_44ffab570ddd70::t_90f71acb8bea7a 1-13
+README.md
+  s_44ffab570ddd70::t_b21d0646a9ff84 1-30,32-129
+  s_44ffab570ddd70::t_925cd4e1f42952 31
+app/bin/test
+  s_44ffab570ddd70::t_1f9684f56ecda2 1-8
+app/src/qml/AppearanceEditor.qml
+  s_44ffab570ddd70::t_28e8c114e13edc 100-101
+  s_44ffab570ddd70::t_b050ee74c39f82 109
+shell/streamdeck-linux.deck/tests/deck.test.mjs
+  s_44ffab570ddd70::t_58cc9d1e6c19dd 1-64
+  s_44ffab570ddd70::t_f91874ec9d982d 65-66
+daemon/src/engine.rs
+  s_44ffab570ddd70::t_81d7caf8e38808 176-177,234
+packaging/70-streamdeck.rules
+  s_44ffab570ddd70::t_90f71acb8bea7a 1-3
+pkgbuild/streamdeck-linux.install
+  s_44ffab570ddd70::t_45b0b75e7d6ce5 1-15
+packaging/streamdeck-vsd.desktop
+  s_44ffab570ddd70::t_90f71acb8bea7a 1-9
+app/src/daemonclient.h
+  s_44ffab570ddd70::t_33549925537eb3 85-87
+shell/streamdeck-linux.deck/Deck.js
+  s_44ffab570ddd70::t_d66aebbf31a971 1-118
+LICENSE
+  s_44ffab570ddd70::t_4ba0a8c5a5fc6b 1-29
+docs/ACTIONS.md
+  s_44ffab570ddd70::t_3564a581dc1f3d 1-56
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e24bf3cbb43fe75d9f90b42feb3dede99d03d96b",
+  "prompts": {},
+  "sessions": {
+    "s_44ffab570ddd70": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "01a1e5f7-e708-7522-be1e-95c4b8831cb1",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Ben Wyrosdick <ben.wyrosdick@gmail.com>"
+    }
+  }
+}
