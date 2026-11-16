@@ -5,6 +5,7 @@ import QtQuick.Layouts
 
 // Title and image of one state, stored the way the original app stores them
 // (States[n].Title, FontFamily, FontSize, FontStyle, TitleAlignment, …).
+// Kept compact so it fits beside the settings in a short inspector.
 ScrollView {
     id: editor
     property var sel
@@ -16,33 +17,44 @@ ScrollView {
     readonly property var manifestState: def && def.states && def.states[stateIndex] ? def.states[stateIndex] : ({})
     readonly property bool isDial: sel && sel.controller === "Encoder"
     readonly property bool titleAllowed: !def || def.userTitleEnabled !== false
+    readonly property string alignment: st.TitleAlignment || manifestState.TitleAlignment || "bottom"
+    readonly property var imageFilters: [{ name: qsTr("Images"), patterns: ["*.png", "*.jpg", "*.jpeg", "*.gif", "*.svg", "*.webp"] }]
 
     function save(patch) {
         Store.updateState(sel, stateIndex, patch)
     }
 
+    function pickFile() {
+        filePicker.open(qsTr("Choose an image"), imageFilters, false, false, function (paths) {
+            if (paths.length) Store.setImage(sel, stateIndex, paths[0])
+        })
+    }
+
     contentWidth: availableWidth
     clip: true
+    ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
 
     ColumnLayout {
         width: editor.availableWidth
-        spacing: 10
+        spacing: 8
 
         Item { Layout.preferredHeight: 4 }
 
+        // Image and title side by side.
         RowLayout {
             Layout.fillWidth: true
-            Layout.leftMargin: 14
-            Layout.rightMargin: 14
-            spacing: 12
+            Layout.leftMargin: 12
+            Layout.rightMargin: 12
+            spacing: 10
 
-            // The image well shows the live key; the menu changes the state's image.
             Rectangle {
-                Layout.preferredWidth: 84
-                Layout.preferredHeight: 84
+                Layout.preferredWidth: 76
+                Layout.preferredHeight: 76
+                Layout.alignment: Qt.AlignTop
                 radius: Ui.small + 4
                 color: "#000"
                 border.color: wellMouse.containsMouse ? Ui.accent : Ui.border
+
                 Image {
                     id: wellImage
                     property int revision: 0
@@ -69,12 +81,15 @@ ScrollView {
                     hoverEnabled: true
                     cursorShape: Qt.PointingHandCursor
                     onClicked: imageMenu.popup()
+                    ToolTip.visible: containsMouse
+                    ToolTip.delay: 500
+                    ToolTip.text: qsTr("Click to choose an image or an icon pack. You can also drop an image file here or on a key.")
                 }
                 DropArea {
                     anchors.fill: parent
                     keys: ["text/uri-list"]
                     onDropped: function (ev) {
-                        if (ev.hasUrls) editor.chooseImage(util.localPath(ev.urls[0]))
+                        if (ev.hasUrls) Store.setImage(editor.sel, editor.stateIndex, util.localPath(ev.urls[0]))
                         ev.accept()
                     }
                 }
@@ -97,131 +112,168 @@ ScrollView {
 
             ColumnLayout {
                 Layout.fillWidth: true
-                // A small preferred width lets the layout shrink it so the hint wraps.
                 Layout.preferredWidth: 1
-                spacing: 2
-                Label {
-                    text: editor.isDial ? qsTr("Dial icon") : qsTr("Key image")
-                    color: Ui.dim
-                }
-                Label {
-                    Layout.fillWidth: true
-                    Layout.maximumWidth: editor.availableWidth - 124
-                    wrapMode: Text.WordWrap
-                    color: Ui.faint
-                    font.pixelSize: 11
-                    text: qsTr("Click to choose an image or an icon pack. You can also drop a PNG, JPEG, GIF or SVG on a key.")
-                }
-            }
-        }
-
-        FieldLabel { text: qsTr("Title"); visible: editor.titleAllowed }
-        ScrollView {
-            Layout.fillWidth: true
-            Layout.leftMargin: 14
-            Layout.rightMargin: 14
-            Layout.preferredHeight: 64
-            visible: editor.titleAllowed
-            TextArea {
-                id: titleField
-                text: editor.st.Title || ""
-                wrapMode: TextEdit.NoWrap
-                // Saved when focus leaves, so typing does not re-render every keystroke.
-                onActiveFocusChanged: if (!activeFocus && text !== (editor.st.Title || "")) editor.save({ Title: text })
-                Keys.onPressed: function (e) {
-                    if (e.key === Qt.Key_Return && (e.modifiers & Qt.ControlModifier)) { editor.save({ Title: text }); e.accepted = true }
-                }
-            }
-        }
-
-        GridLayout {
-            Layout.fillWidth: true
-            Layout.leftMargin: 14
-            Layout.rightMargin: 14
-            columns: 2
-            columnSpacing: 10
-            rowSpacing: 6
-            visible: editor.titleAllowed
-
-            Label { text: qsTr("Show"); color: Ui.dim }
-            Switch {
-                checked: editor.st.ShowTitle !== false
-                onToggled: editor.save({ ShowTitle: checked })
-            }
-
-            Label { text: qsTr("Position"); color: Ui.dim }
-            ButtonGroup { id: alignGroup }
-            Row {
                 spacing: 4
-                Repeater {
-                    model: [{ v: "top", t: qsTr("Top") }, { v: "middle", t: qsTr("Middle") }, { v: "bottom", t: qsTr("Bottom") }]
-                    delegate: Button {
-                        required property var modelData
-                        text: modelData.t
-                        flat: (editor.st.TitleAlignment || editor.manifestState.TitleAlignment || "bottom") !== modelData.v
-                        highlighted: !flat
-                        implicitWidth: 66
-                        onClicked: editor.save({ TitleAlignment: modelData.v })
+                visible: editor.titleAllowed
+
+                Label {
+                    text: qsTr("Title")
+                    color: Ui.dim
+                    font.pixelSize: 12
+                }
+                Rectangle {
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: 56
+                    radius: Ui.small
+                    color: Ui.well
+                    border.color: titleField.activeFocus ? Ui.accent : Ui.border
+                    Flickable {
+                        id: titleFlick
+                        anchors.fill: parent
+                        anchors.margins: 6
+                        clip: true
+                        contentHeight: titleField.implicitHeight
+                        TextEdit {
+                            id: titleField
+                            width: titleFlick.width
+                            text: editor.st.Title || ""
+                            color: Ui.text
+                            selectionColor: Ui.accent
+                            selectedTextColor: Ui.accentText
+                            font.pixelSize: 13
+                            wrapMode: TextEdit.NoWrap
+                            // Saved when focus leaves, so typing does not redraw every keystroke.
+                            onActiveFocusChanged: if (!activeFocus && text !== (editor.st.Title || "")) editor.save({ Title: text })
+                            Keys.onPressed: function (e) {
+                                if (e.key === Qt.Key_Return && (e.modifiers & Qt.ControlModifier)) { editor.save({ Title: text }); e.accepted = true }
+                            }
+                        }
+                        Label {
+                            visible: titleField.text.length === 0 && !titleField.activeFocus
+                            text: qsTr("No title")
+                            color: Ui.faint
+                            font.pixelSize: 13
+                        }
                     }
                 }
             }
+        }
 
-            Label { text: qsTr("Font"); color: Ui.dim }
-            ComboBox {
-                Layout.fillWidth: true
-                model: [qsTr("Default")].concat(Store.fonts)
-                currentIndex: Math.max(0, Store.fonts.indexOf(editor.st.FontFamily || "") + 1)
-                onActivated: function (i) { editor.save({ FontFamily: i === 0 ? "" : Store.fonts[i - 1] }) }
-            }
+        // Title options in tight rows: no Material control is taller than it must be.
+        GridLayout {
+            Layout.fillWidth: true
+            Layout.leftMargin: 12
+            Layout.rightMargin: 12
+            visible: editor.titleAllowed
+            columns: 2
+            columnSpacing: 8
+            rowSpacing: 6
 
-            Label { text: qsTr("Size"); color: Ui.dim }
+            Label { text: qsTr("Show"); color: Ui.dim; font.pixelSize: 12 }
             RowLayout {
-                SpinBox {
-                    from: 6
-                    to: 40
-                    value: editor.st.FontSize || editor.manifestState.FontSize || 12
-                    editable: true
-                    onValueModified: editor.save({ FontSize: value })
+                Layout.fillWidth: true
+                spacing: 4
+                Switch {
+                    padding: 0
+                    checked: editor.st.ShowTitle !== false
+                    onToggled: editor.save({ ShowTitle: checked })
                 }
-                ComboBox {
+                Item { Layout.fillWidth: true }
+                Repeater {
+                    model: [{ v: "top", t: "⤒", tip: qsTr("Top") }, { v: "middle", t: "≡", tip: qsTr("Middle") }, { v: "bottom", t: "⤓", tip: qsTr("Bottom") }]
+                    delegate: SmallToggle {
+                        required property var modelData
+                        text: modelData.t
+                        checked: editor.alignment === modelData.v
+                        tip: modelData.tip
+                        onClicked: editor.save({ TitleAlignment: modelData.v })
+                    }
+                }
+                SmallToggle {
+                    text: "U"
+                    font.underline: true
+                    checked: !!editor.st.FontUnderline
+                    tip: qsTr("Underline")
+                    onClicked: editor.save({ FontUnderline: !checked })
+                }
+            }
+
+            Label { text: qsTr("Font"); color: Ui.dim; font.pixelSize: 12 }
+            RowLayout {
+                Layout.fillWidth: true
+                spacing: 4
+                CompactCombo {
                     Layout.fillWidth: true
-                    model: [qsTr("Regular"), qsTr("Bold"), qsTr("Italic"), qsTr("Bold Italic")]
-                    readonly property var values: ["Regular", "Bold", "Italic", "Bold Italic"]
-                    currentIndex: Math.max(0, values.indexOf(editor.st.FontStyle || "Regular"))
-                    onActivated: function (i) { editor.save({ FontStyle: values[i] === "Regular" ? "" : values[i] }) }
+                    Layout.preferredWidth: 1
+                    model: [qsTr("Default")].concat(Store.fonts)
+                    currentIndex: Math.max(0, Store.fonts.indexOf(editor.st.FontFamily || "") + 1)
+                    onActivated: function (i) { editor.save({ FontFamily: i === 0 ? "" : Store.fonts[i - 1] }) }
+                }
+                CompactCombo {
+                    Layout.preferredWidth: 74
+                    readonly property var sizes: [7, 8, 9, 10, 11, 12, 13, 14, 16, 18, 20, 24, 28, 32, 40]
+                    readonly property int current: editor.st.FontSize || editor.manifestState.FontSize || 12
+                    model: sizes
+                    currentIndex: Math.max(0, sizes.indexOf(current))
+                    displayText: String(current)
+                    onActivated: function (i) { editor.save({ FontSize: sizes[i] }) }
                 }
             }
 
-            Label { text: qsTr("Underline"); color: Ui.dim }
-            Switch {
-                checked: !!editor.st.FontUnderline
-                onToggled: editor.save({ FontUnderline: checked })
+            Label { text: qsTr("Style"); color: Ui.dim; font.pixelSize: 12 }
+            CompactCombo {
+                Layout.fillWidth: true
+                readonly property var values: ["Regular", "Bold", "Italic", "Bold Italic"]
+                model: [qsTr("Regular"), qsTr("Bold"), qsTr("Italic"), qsTr("Bold Italic")]
+                currentIndex: Math.max(0, values.indexOf(editor.st.FontStyle || "Regular"))
+                onActivated: function (i) { editor.save({ FontStyle: values[i] === "Regular" ? "" : values[i] }) }
             }
 
-            Label { text: qsTr("Color"); color: Ui.dim }
+            Label { text: qsTr("Color"); color: Ui.dim; font.pixelSize: 12 }
             ColorField {
+                Layout.fillWidth: true
                 value: editor.st.TitleColor || editor.manifestState.TitleColor || "#ffffff"
                 onPicked: function (c) { editor.save({ TitleColor: c }) }
             }
         }
 
-        Item { Layout.preferredHeight: 10 }
+        Item { Layout.preferredHeight: 8 }
     }
 
-    readonly property var imageFilters: [{ name: qsTr("Images"), patterns: ["*.png", "*.jpg", "*.jpeg", "*.gif", "*.svg", "*.webp"] }]
-
-    function pickFile() {
-        filePicker.open(qsTr("Choose an image"), imageFilters, false, false, function (paths) {
-            if (paths.length) editor.chooseImage(paths[0])
-        })
+    // A small square toggle for alignment and underline.
+    component SmallToggle: AbstractButton {
+        property string tip: ""
+        implicitWidth: 26
+        implicitHeight: 26
+        hoverEnabled: true
+        background: Rectangle {
+            radius: Ui.small
+            color: parent.checked ? Ui.accent : (parent.hovered ? Ui.raised : "transparent")
+            border.color: parent.checked ? Ui.accent : Ui.border
+        }
+        contentItem: Text {
+            text: parent.text
+            font: parent.font
+            color: parent.checked ? Ui.accentText : Ui.text
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+        }
+        ToolTip.visible: hovered && tip.length > 0
+        ToolTip.delay: 500
+        ToolTip.text: tip
     }
 
-    function chooseImage(path) {
-        Store.setImage(sel, stateIndex, path)
+    // Material's ComboBox is 48 px tall with a wide indicator; this one is not.
+    component CompactCombo: ComboBox {
+        implicitHeight: 30
+        font.pixelSize: 12
+        topInset: 0
+        bottomInset: 0
+        Material.roundedScale: Material.SmallScale
     }
 
     IconLibrary {
         id: library
-        onPicked: function (path) { editor.chooseImage(path) }
+        onPicked: function (path) { Store.setImage(editor.sel, editor.stateIndex, path) }
     }
 }

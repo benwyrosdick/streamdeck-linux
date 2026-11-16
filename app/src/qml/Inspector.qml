@@ -127,7 +127,7 @@ Rectangle {
             spacing: 0
 
             AppearanceEditor {
-                Layout.preferredWidth: 300
+                Layout.preferredWidth: 340
                 Layout.fillHeight: true
                 sel: inspector.sel
                 action: inspector.action

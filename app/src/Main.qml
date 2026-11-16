@@ -100,8 +100,8 @@ ApplicationWindow {
                     }
 
                     Inspector {
-                        SplitView.preferredHeight: 330
-                        SplitView.minimumHeight: 180
+                        SplitView.preferredHeight: Math.max(300, win.height * 0.38)
+                        SplitView.minimumHeight: 240
                     }
                 }
 

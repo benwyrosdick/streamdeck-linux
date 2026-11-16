@@ -10,15 +10,15 @@ RowLayout {
     signal picked(string color)
     spacing: 4
 
-    readonly property var swatches: ["#ffffff", "#000000", "#ff453a", "#ff9f0a", "#ffd60a", "#32d74b", "#64d2ff", "#0a84ff", "#bf5af2", "#ff375f"]
+    readonly property var swatches: ["#ffffff", "#000000", "#ff453a", "#ffd60a", "#32d74b", "#0a84ff", "#bf5af2"]
 
     Repeater {
         model: field.swatches
         delegate: Rectangle {
             required property string modelData
-            width: 18
-            height: 18
-            radius: 9
+            width: 16
+            height: 16
+            radius: 8
             color: modelData
             border.width: field.value.toLowerCase() === modelData ? 2 : 1
             border.color: field.value.toLowerCase() === modelData ? Ui.accent : Ui.border
@@ -31,7 +31,12 @@ RowLayout {
     }
 
     TextField {
-        Layout.preferredWidth: 86
+        Layout.fillWidth: true
+        Layout.minimumWidth: 64
+        Layout.preferredHeight: 30
+        topInset: 0
+        bottomInset: 0
+        font.pixelSize: 12
         text: field.value
         validator: RegularExpressionValidator { regularExpression: /#[0-9a-fA-F]{6}/ }
         onEditingFinished: if (acceptableInput && text !== field.value) field.picked(text.toLowerCase())
