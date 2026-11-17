@@ -52,7 +52,11 @@ pub const ACTION_WHEEL: &str = "com.elgato.streamdeck.keys.stack";
 pub const ACTION_TRIGGER: &str = "com.elgato.streamdeck.keys.adaptor";
 pub const DIAL_STACK: &str = "com.elgato.streamdeck.dial.stack";
 pub const DIGITAL_TIME: &str = "com.elgato.streamdeck.system.digitaltime";
+// The Neo info bar always shows its page dots, so nothing looks for this one.
+#[allow(dead_code)]
 pub const PAGINATION: &str = "com.elgato.streamdeck.system.pagination";
+// This port's own; the original has no microphone action.
+pub const MIC_MUTE: &str = "streamdeck-linux.audio.micmute";
 
 /// `actionIdx` of the Multimedia action, in the order of the original app's
 /// action list. Indices 18–22 are the dial-oriented entries.
@@ -156,6 +160,7 @@ impl Engine {
             PAGE_INDICATOR => self.update_page_indicator(ctx),
             OPEN_APP => self.update_app_running(ctx),
             ACTION_WHEEL | DIAL_STACK => self.update_stack_display(ctx),
+            MIC_MUTE => self.refresh_mic(),
             _ => {}
         }
     }
@@ -364,6 +369,16 @@ impl Engine {
                 let s = (a.state + 1) % 2;
                 self.set_state(ctx, s);
                 None
+            }
+            MIC_MUTE => {
+                // A Multi Action step can ask for Muted or Live; otherwise toggle.
+                let desired = self.instances.get(ctx).and_then(|i| i.rt.get("desired")).and_then(|v| v.as_u64()).map(|s| s == 1);
+                let tx = self.tx.clone();
+                work(async move {
+                    let r = system::set_mic_muted(desired).await;
+                    tx.send(Msg::Exec(Box::new(|e: &mut Engine| e.refresh_mic()))).ok();
+                    r
+                })
             }
             TIMER | OPEN_APP | KEY_LOGIC | CLOSE => None, // act on release / hold
             _ => None,
@@ -655,6 +670,8 @@ impl Engine {
             }
             (PLAY_AUDIO, DialEv::Down) | (STOP_AUDIO, DialEv::Down) | (TIMER, DialEv::Down) | (SWITCH_PROFILE, DialEv::Down) | (OPEN, DialEv::Down) | (WEBSITE, DialEv::Down) => self.builtin_down(ctx),
             (TIMER, DialEv::Up) => self.builtin_up(ctx, Duration::ZERO),
+            (MIC_MUTE, DialEv::Down) => self.builtin_down(ctx),
+            (MIC_MUTE, DialEv::Rotate(t)) => work(async move { system::step_mic_volume(t.clamp(-20, 20) * 2).await }),
             (PAGE_NEXT | PAGE_PREV | PAGE_INDICATOR, DialEv::Rotate(t)) => {
                 self.page_step(&dev, t.signum());
                 None
@@ -724,6 +741,26 @@ impl Engine {
                         i.running = running;
                         e.render_ctx(&ctx);
                     }
+                }
+            })))
+            .ok();
+        });
+    }
+
+    /// Shows the microphone's real mute state on every Mute Microphone action,
+    /// whoever muted it.
+    pub fn refresh_mic(&mut self) {
+        if !self.instances.values().any(|i| i.uuid == MIC_MUTE) {
+            return;
+        }
+        let tx = self.tx.clone();
+        tokio::spawn(async move {
+            let Some(muted) = system::mic_muted().await else { return };
+            tx.send(Msg::Exec(Box::new(move |e: &mut Engine| {
+                let state = muted as u32;
+                let stale: Vec<String> = e.instances.values().filter(|i| i.uuid == MIC_MUTE).map(|i| i.context.clone()).filter(|c| e.ctx_action(c).map(|a| a.state != state).unwrap_or(false)).collect();
+                for c in stale {
+                    e.set_state(&c, state);
                 }
             })))
             .ok();

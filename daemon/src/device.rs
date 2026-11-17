@@ -89,7 +89,7 @@ impl Worker {
             let mut keys: BTreeMap<u8, KeyVisual> = BTreeMap::new();
             let mut screen: Option<String> = None;
             let mut others = Vec::new();
-            let mut handle = |job: RenderJob, keys: &mut BTreeMap<u8, KeyVisual>, screen: &mut Option<String>, others: &mut Vec<RenderJob>| match job {
+            let handle = |job: RenderJob, keys: &mut BTreeMap<u8, KeyVisual>, screen: &mut Option<String>, others: &mut Vec<RenderJob>| match job {
                 RenderJob::Key(i, v) => {
                     keys.insert(i, v);
                 }

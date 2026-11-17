@@ -4,7 +4,7 @@
 
 use crate::catalog::{self, DeviceSpec};
 use crate::device::{DeviceInfo, DeviceInput, EngineEvent, RenderJob};
-use crate::model::{page_dir_name, ActionData};
+use crate::model::ActionData;
 use crate::plugins::{self, Registry, RunningPlugin};
 use crate::render::{self, ImageSource, KeyVisual, Overlay, Title};
 use crate::sdk::{ConnKind, SdkEvent};
@@ -907,8 +907,8 @@ impl Engine {
         let d = &self.devices[dev_id];
         let pages = d.profile.and_then(|p| self.store.get(&p)).map(|p| p.top_pages()).unwrap_or_default();
         let current = d.folders.first().copied().or(d.page).and_then(|pg| pages.iter().position(|x| *x == pg)).unwrap_or(0);
-        let neo_action = d.visible.iter().find(|(s, _)| s.ctl == Ctl::Neo).map(|(_, c)| c.clone());
-        let time_fmt = neo_action.as_ref().and_then(|c| self.ctx_action(c)).map(|a| a.setting_bool("24HourFormat", true)).unwrap_or(true);
+        let clock = d.visible.iter().filter(|(s, _)| s.ctl == Ctl::Neo).filter_map(|(_, c)| self.ctx_action(c)).find(|a| a.uuid == crate::builtins::DIGITAL_TIME);
+        let time_fmt = clock.map(|a| a.setting_bool("24HourFormat", true)).unwrap_or(true);
         let now = chrono::Local::now();
         let time = if time_fmt { now.format("%H:%M").to_string() } else { now.format("%-I:%M %p").to_string() };
         let mut dots = String::new();
@@ -1073,6 +1073,14 @@ impl Engine {
     pub fn trigger_down(&mut self, ctx: &str, desired_state: Option<u32>) -> Work {
         let Some(inst) = self.instances.get(ctx) else { return None };
         if inst.builtin {
+            if let Some(i) = self.instances.get_mut(ctx) {
+                match desired_state {
+                    Some(d) => i.rt["desired"] = json!(d),
+                    None => {
+                        i.rt.as_object_mut().map(|o| o.remove("desired"));
+                    }
+                }
+            }
             let w = self.builtin_down(ctx);
             if inst_is_top(self, ctx) {
                 self.spawn_work(ctx, w);
@@ -1843,10 +1851,6 @@ pub enum DialEv {
     Up,
     Rotate(i32),
     Touch { x: u16, y: u16, long: bool },
-}
-
-pub fn page_label(id: &Uuid) -> String {
-    page_dir_name(id)
 }
 
 pub fn spec_for(e: &Engine, dev: &str) -> Option<&'static DeviceSpec> {

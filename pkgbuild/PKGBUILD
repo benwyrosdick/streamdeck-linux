@@ -10,7 +10,9 @@ depends=('qt6-base' 'qt6-declarative' 'qt6-wayland' 'qt6-webengine' 'qt6-svg' 'h
 optdepends=('nodejs: run plugins built with the Stream Deck SDK'
             'gtk3: gtk-launch, for apps whose desktop entry is D-Bus activated'
             'hyprland: smart profiles and the Open/Close Application actions'
-            'omarchy: the Stream Deck bar widget')
+            'omarchy: the Stream Deck bar widget'
+            'wireplumber: the Mute Microphone action'
+            'libpulse: Mute Microphone keys follow mutes made elsewhere')
 # Rust's cargo is needed too; it is not listed because most people have it
 # from rustup, which pacman does not know about.
 makedepends=('gcc' 'make')

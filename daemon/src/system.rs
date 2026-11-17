@@ -467,6 +467,72 @@ pub fn watch_sleep(tx: tokio::sync::mpsc::UnboundedSender<bool>) {
     });
 }
 
+/// Runs `wpctl` (WirePlumber) against the default microphone.
+async fn wpctl(args: &[&str]) -> Result<String> {
+    let out = Command::new("wpctl").args(args).stdin(Stdio::null()).output().await.map_err(|e| match e.kind() {
+        std::io::ErrorKind::NotFound => anyhow!("wpctl not found; install wireplumber"),
+        _ => anyhow!("wpctl: {e}"),
+    })?;
+    if !out.status.success() {
+        let err = String::from_utf8_lossy(&out.stderr);
+        let err = err.trim();
+        bail!("{}", if err.is_empty() { "no microphone" } else { err });
+    }
+    Ok(String::from_utf8_lossy(&out.stdout).into_owned())
+}
+
+pub const MIC: &str = "@DEFAULT_AUDIO_SOURCE@";
+
+/// Whether the default microphone is muted; None when there is none.
+pub async fn mic_muted() -> Option<bool> {
+    parse_muted(&wpctl(&["get-volume", MIC]).await.ok()?)
+}
+
+fn parse_muted(out: &str) -> Option<bool> {
+    out.trim().starts_with("Volume:").then(|| out.contains("[MUTED]"))
+}
+
+/// Mutes, unmutes, or (None) toggles the default microphone.
+pub async fn set_mic_muted(mute: Option<bool>) -> Result<()> {
+    let arg = match mute {
+        Some(true) => "1",
+        Some(false) => "0",
+        None => "toggle",
+    };
+    wpctl(&["set-mute", MIC, arg]).await.map(|_| ())
+}
+
+/// Turns the default microphone's level up or down, never past 100 %.
+pub async fn step_mic_volume(percent: i32) -> Result<()> {
+    let step = format!("{}%{}", percent.unsigned_abs(), if percent < 0 { "-" } else { "+" });
+    wpctl(&["set-volume", "-l", "1.0", MIC, &step]).await.map(|_| ())
+}
+
+/// Signals whenever a microphone or the default devices change, so mute keys
+/// follow mutes made elsewhere. `pactl subscribe` works with PipeWire's
+/// PulseAudio server and avoids a client library. It reconnects when the
+/// sound server restarts.
+pub fn watch_audio(tx: tokio::sync::mpsc::UnboundedSender<()>) {
+    tokio::spawn(async move {
+        loop {
+            let Ok(mut child) = Command::new("pactl").arg("subscribe").stdin(Stdio::null()).stdout(Stdio::piped()).stderr(Stdio::null()).kill_on_drop(true).spawn() else {
+                return;
+            };
+            let mut lines = BufReader::new(child.stdout.take().unwrap()).lines();
+            while let Ok(Some(line)) = lines.next_line().await {
+                if (line.contains(" on source #") || line.contains(" on server")) && tx.send(()).is_err() {
+                    return;
+                }
+            }
+            child.wait().await.ok();
+            tokio::time::sleep(std::time::Duration::from_secs(3)).await;
+            if tx.send(()).is_err() {
+                return;
+            }
+        }
+    });
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -474,5 +540,12 @@ mod tests {
     #[test]
     fn words() {
         assert_eq!(shell_words(r#"a "b c" 'd' e"#), vec!["a", "b c", "d", "e"]);
+    }
+
+    #[test]
+    fn mic_mute_state() {
+        assert_eq!(parse_muted("Volume: 1.00\n"), Some(false));
+        assert_eq!(parse_muted("Volume: 0.45 [MUTED]\n"), Some(true));
+        assert_eq!(parse_muted(""), None);
     }
 }

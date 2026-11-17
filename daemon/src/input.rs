@@ -13,16 +13,11 @@ use std::sync::OnceLock;
 use std::time::Duration;
 
 pub mod keys {
-    pub const ESC: u16 = 1;
-    pub const BACKSPACE: u16 = 14;
-    pub const TAB: u16 = 15;
     pub const ENTER: u16 = 28;
     pub const LEFTCTRL: u16 = 29;
     pub const LEFTSHIFT: u16 = 42;
     pub const LEFTALT: u16 = 56;
-    pub const SPACE: u16 = 57;
     pub const LEFTMETA: u16 = 125;
-    pub const INSERT: u16 = 110;
     pub const V: u16 = 47;
     pub const MUTE: u16 = 113;
     pub const VOLUMEDOWN: u16 = 114;
@@ -356,27 +351,6 @@ pub fn qt_to_evdev(qt: i64) -> Option<(u16, bool)> {
         _ => return None,
     };
     Some((code, false))
-}
-
-/// Human-readable label for a combo, used as the default key title.
-pub fn describe(c: &Combo) -> String {
-    let mut parts = Vec::new();
-    if c.mods.meta {
-        parts.push("Super".to_string());
-    }
-    if c.mods.ctrl {
-        parts.push("Ctrl".to_string());
-    }
-    if c.mods.alt {
-        parts.push("Alt".to_string());
-    }
-    if c.mods.shift {
-        parts.push("Shift".to_string());
-    }
-    if c.key != 0 {
-        parts.push(format!("#{}", c.key));
-    }
-    parts.join("+")
 }
 
 #[cfg(test)]

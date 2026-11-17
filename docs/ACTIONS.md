@@ -41,6 +41,12 @@ port's own, used where the original never exposes its stored format.
 | Digital Time | `…system.digitaltime` | `24HourFormat` *(orig)* | Clock on the Stream Deck Neo info bar. |
 | Page Indicator (Neo) | `…system.pagination` | | Page dots on the Neo info bar (shown by default). |
 
+This port adds one action the original does not have:
+
+| Action | UUID | Settings | Behaviour on Linux |
+|---|---|---|---|
+| Mute Microphone | `streamdeck-linux.audio.micmute` | | Mutes or unmutes the default microphone with `wpctl`. State 1 is live, state 2 is muted, and the key follows mutes made anywhere else (through `pactl subscribe`). A Multi Action step set to a state mutes or unmutes instead of toggling. Dial: push toggles, turning sets the microphone level in 2 % steps, up to 100 %. |
+
 ## Stream Deck + touch strip
 
 Plugins choose a layout with `setFeedbackLayout` and fill it with

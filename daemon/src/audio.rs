@@ -61,9 +61,7 @@ fn worker() -> &'static mpsc::Sender<Cmd> {
                             let mixer = sink.as_ref().unwrap().mixer();
                             if req.restart {
                                 if let Some(list) = players.remove(&req.id) {
-                                    for p in list {
-                                        p.stop();
-                                    }
+                                    fade_and_stop(list, req.fade_out);
                                 }
                             }
                             let res = (|| -> Result<rodio::Player> {

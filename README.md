@@ -28,7 +28,7 @@ Elgato's Node.js SDK run unchanged.
 | Smart profiles (switch with the focused app) | ✓ (Hyprland window class) |
 | Import/export `.streamDeckProfile` (current and 4.x/5.x formats) | ✓ |
 | Backups and restore (automatic, every 6 h, configurable) | ✓ |
-| All 33 built-in actions (all but the original's internal debug action), multi actions, key logic, action wheel, action trigger, dial stack | ✓, see [docs/ACTIONS.md](docs/ACTIONS.md) |
+| All 33 built-in actions (all but the original's internal debug action), multi actions, key logic, action wheel, action trigger, dial stack, plus Mute Microphone | ✓, see [docs/ACTIONS.md](docs/ACTIONS.md) |
 | Titles: font, size, style, underline, colour, alignment, multi-line | ✓ |
 | Custom key images (PNG, JPEG, GIF, SVG, WebP), icon packs (`.streamDeckIconPack`) | ✓ |
 | Plugins (`.streamDeckPlugin`): Node.js SDK plugins, HTML plugins, property inspectors | ✓ |

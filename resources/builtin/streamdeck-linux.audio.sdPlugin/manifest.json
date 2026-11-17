@@ -1,0 +1,54 @@
+{
+  "UUID": "streamdeck-linux.audio",
+  "Name": "Microphone",
+  "Author": "streamdeck-linux",
+  "Description": "Microphone",
+  "Category": "System",
+  "CategoryIcon": "Images/category",
+  "Icon": "Images/mic-mute-list",
+  "Version": "1.0",
+  "SDKVersion": 2,
+  "PrivateAPI": true,
+  "OS": [
+    {
+      "Platform": "linux",
+      "MinimumVersion": "6"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.0"
+  },
+  "Actions": [
+    {
+      "UUID": "streamdeck-linux.audio.micmute",
+      "Name": "Mute Microphone",
+      "Tooltip": "Mute or unmute the default microphone",
+      "Icon": "Images/mic-mute-list",
+      "Controllers": [
+        "Keypad",
+        "Encoder"
+      ],
+      "States": [
+        {
+          "Name": "Live",
+          "Image": "Images/mic-live",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        },
+        {
+          "Name": "Muted",
+          "Image": "Images/mic-muted",
+          "TitleAlignment": "bottom",
+          "FontSize": 12
+        }
+      ],
+      "Encoder": {
+        "layout": "$X1",
+        "TriggerDescription": {
+          "Rotate": "Microphone level",
+          "Push": "Mute"
+        }
+      }
+    }
+  ]
+}

@@ -217,6 +217,21 @@ async fn run() -> Result<()> {
             }
         });
     }
+    let (audio_tx, mut audio_rx) = mpsc::unbounded_channel();
+    system::watch_audio(audio_tx);
+    {
+        let tx = tx.clone();
+        tokio::spawn(async move {
+            while audio_rx.recv().await.is_some() {
+                // One mute arrives as a burst of events; read the state once.
+                tokio::time::sleep(Duration::from_millis(50)).await;
+                while audio_rx.try_recv().is_ok() {}
+                if tx.send(Msg::Exec(Box::new(|e: &mut Engine| e.refresh_mic()))).is_err() {
+                    break;
+                }
+            }
+        });
+    }
     {
         let tx = tx.clone();
         tokio::spawn(async move {
