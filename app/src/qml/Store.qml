@@ -39,11 +39,12 @@ QtObject {
     // ------------------------------------------------------------------
     // Daemon plumbing
 
+    // Errors show as a toast unless the callback returns true to say it
+    // showed the error itself.
     function call(method, params, cb) {
         daemon.call(method, params || {}, function (result, error) {
             if (error && error.length) {
-                if (cb) cb(null, error)
-                else toast(error, true)
+                if (!(cb && cb(null, error) === true)) toast(error, true)
                 return
             }
             if (cb) cb(result, "")
@@ -140,6 +141,18 @@ QtObject {
             store.plugins = r
             store.pluginIndex = pi
             store.actionIndex = ai
+        })
+    }
+
+    // Says which plugin arrived, or why it cannot run here.
+    function installPlugin(path) {
+        call("installPlugin", { path: path }, function (uuid, e) {
+            if (e) return
+            call("listPlugins", {}, function (r) {
+                const p = (r || []).find(x => x.uuid === uuid) || { name: uuid }
+                if (p.unsupported) toast(qsTr("%1 was installed but can't run on Linux: %2").arg(p.name).arg(p.unsupported), true)
+                else toast(qsTr("Installed %1").arg(p.name), false)
+            })
         })
     }
 

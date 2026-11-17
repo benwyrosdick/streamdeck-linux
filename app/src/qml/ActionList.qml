@@ -177,7 +177,7 @@ Rectangle {
             flat: true
             text: qsTr("Install plugin…")
             onClicked: filePicker.open(qsTr("Install a Stream Deck plugin"), [{ name: qsTr("Stream Deck plugins"), patterns: ["*.streamDeckPlugin"] }], false, false, function (paths) {
-                if (paths.length) Store.call("installPlugin", { path: paths[0] }, function (r, e) { if (!e) Store.toast(qsTr("Installed %1").arg(r), false) })
+                if (paths.length) Store.installPlugin(paths[0])
             })
         }
     }

@@ -85,7 +85,12 @@ fn localization(dir: &Path, lang: &str) -> Value {
 }
 
 pub fn load_plugin(dir: &Path, builtin: bool, lang: &str) -> Result<Plugin> {
-    let manifest: Value = serde_json::from_slice(&std::fs::read(dir.join("manifest.json")).context("manifest.json")?).context("manifest.json is not valid JSON")?;
+    let raw = std::fs::read(dir.join("manifest.json")).context("manifest.json")?;
+    // Some of Elgato's own plugins ship an encrypted manifest.
+    if raw.starts_with(b"ELGATO") {
+        bail!("its manifest is encrypted by Elgato, so only the official Stream Deck app can read it");
+    }
+    let manifest: Value = serde_json::from_slice(&raw).context("manifest.json is not valid JSON")?;
     let uuid = {
         let u = s(&manifest, "UUID");
         if u.is_empty() {
@@ -358,4 +363,19 @@ pub fn should_restart(started: Instant, restarts: u32) -> Option<Duration> {
         return None;
     }
     Some(Duration::from_secs(1 << restarts.min(4)))
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn encrypted_manifest_says_so() {
+        let dir = std::env::temp_dir().join(format!("sd-encrypted-{}.sdPlugin", std::process::id()));
+        std::fs::create_dir_all(&dir).unwrap();
+        std::fs::write(dir.join("manifest.json"), b"ELGATO\x01\x00\x00\x7f\xa0\x02").unwrap();
+        let err = load_plugin(&dir, false, "en").err().unwrap().to_string();
+        std::fs::remove_dir_all(&dir).ok();
+        assert!(err.contains("encrypted by Elgato"), "{err}");
+    }
 }

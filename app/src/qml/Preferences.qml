@@ -296,7 +296,7 @@ Dialog {
                     footer: Button {
                         text: qsTr("Install plugin…")
                         onClicked: filePicker.open(qsTr("Install a Stream Deck plugin"), [{ name: qsTr("Stream Deck plugins"), patterns: ["*.streamDeckPlugin"] }], false, false, function (p) {
-                            if (p.length) Store.call("installPlugin", { path: p[0] })
+                            if (p.length) Store.installPlugin(p[0])
                         })
                     }
                     Label {

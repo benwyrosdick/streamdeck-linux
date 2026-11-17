@@ -149,7 +149,7 @@ ApplicationWindow {
             onDropped: function (drop) {
                 for (const u of drop.urls) {
                     const p = util.localPath(u)
-                    if (p.endsWith(".streamDeckPlugin")) Store.call("installPlugin", { path: p }, function (r, e) { if (!e) Store.toast(qsTr("Installed %1").arg(r), false) })
+                    if (p.endsWith(".streamDeckPlugin")) Store.installPlugin(p)
                     else if (p.endsWith(".streamDeckProfile")) Store.call("importProfile", { path: p, device: Store.deviceId }, function (r, e) { if (!e) Store.toast(qsTr("Profile imported"), false) })
                     else if (p.endsWith(".streamDeckIconPack")) Store.call("installIconPack", { path: p }, function (r, e) { if (!e) Store.toast(qsTr("Icon pack installed"), false) })
                 }

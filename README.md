@@ -32,6 +32,7 @@ Elgato's Node.js SDK run unchanged.
 | Titles: font, size, style, underline, colour, alignment, multi-line | ✓ |
 | Custom key images (PNG, JPEG, GIF, SVG, WebP), icon packs (`.streamDeckIconPack`) | ✓ |
 | Plugins (`.streamDeckPlugin`): Node.js SDK plugins, HTML plugins, property inspectors | ✓ |
+| Elgato Marketplace | Partly: "Open in Stream Deck" links name the item and say whether it is installed, but Elgato requires signing in to download, so download the `.streamDeckPlugin` file and open it. Plugins that ship only macOS/Windows programs, or an encrypted manifest, cannot run. |
 | SDK events: settings, global settings, titles, images, states, alerts, feedback layouts, trigger descriptions, resources, deep links (`streamdeck://`), monitored applications, wake from sleep | ✓ |
 | Virtual Stream Deck, any size | ✓ |
 | Brightness, sleep timer, key press feedback | ✓ |

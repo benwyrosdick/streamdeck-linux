@@ -12,6 +12,7 @@
 
 #include "apputil.h"
 #include "daemonclient.h"
+#include "opener.h"
 #include "theme.h"
 #include "translator.h"
 
@@ -58,6 +59,28 @@ class StreamDeckTests : public QObject {
     Q_OBJECT
 
 private slots:
+    void openerReadsMarketplaceLinks() {
+        QCOMPARE(Opener::marketplaceItem("streamdeck://plugins/install/8EC91FA3-3a50-4041-b53a-dae3eff7fbdf"), QString("8ec91fa3-3a50-4041-b53a-dae3eff7fbdf"));
+        QCOMPARE(Opener::marketplaceItem("streamdeck://plugins/install/8ec91fa3-3a50-4041-b53a-dae3eff7fbdf?src=web"), QString("8ec91fa3-3a50-4041-b53a-dae3eff7fbdf"));
+        QVERIFY(Opener::marketplaceItem("streamdeck://plugins/install/../../etc").isEmpty());
+        QVERIFY(Opener::marketplaceItem("streamdeck://plugins/message/com.example/hi").isEmpty());
+    }
+
+    void openerExplainsOutcomes() {
+        const auto ok = Opener::pluginInstalled({{"uuid", "com.example.p"}, {"name", "Example"}, {"version", "1.2"}});
+        QVERIFY(ok.ok);
+        QCOMPARE(ok.summary, QString("Installed Example"));
+        const auto native = Opener::pluginInstalled({{"name", "Discord"}, {"unsupported", "this plugin ships only a macOS and Windows binary and has no Node.js or Linux build"}});
+        QVERIFY(!native.ok);
+        QCOMPARE(native.summary, QString("Discord can't run on Linux"));
+        QCOMPARE(native.body, QString("It was installed, but this plugin ships only a macOS and Windows binary and has no Node.js or Linux build."));
+        const QVariantMap item{{"product_name", "Discord"}, {"streamdeckid", "com.elgato.discord"}};
+        QCOMPARE(Opener::marketplaceLink(item, {{"version", "2.4"}}).summary, QString("Discord is already installed"));
+        const auto missing = Opener::marketplaceLink(item, {});
+        QVERIFY(!missing.ok);
+        QVERIFY(missing.body.contains(".streamDeckPlugin"));
+    }
+
     void clientSubscribesAndLoadsState() {
         QTemporaryDir dir;
         FakeDaemon fake(dir.filePath("control.sock"));

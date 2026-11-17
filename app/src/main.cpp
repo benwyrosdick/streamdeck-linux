@@ -7,8 +7,6 @@
 
 #include <QGuiApplication>
 #include <QIcon>
-#include <QJsonDocument>
-#include <QLocalSocket>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QQuickStyle>
@@ -21,6 +19,7 @@
 
 #include "apputil.h"
 #include "daemonclient.h"
+#include "opener.h"
 #include "pluginhost.h"
 #include "portalfilepicker.h"
 #include "theme.h"
@@ -33,42 +32,7 @@ static int openFile(const QString &target) {
     QString socketPath = qEnvironmentVariable("STREAMDECK_RUNTIME_DIR");
     if (socketPath.isEmpty())
         socketPath = qEnvironmentVariable("XDG_RUNTIME_DIR") + "/streamdeck-linux";
-    socketPath += "/control.sock";
-    QLocalSocket s;
-    s.connectToServer(socketPath);
-    if (!s.waitForConnected(2000)) {
-        fprintf(stderr, "streamdeckd is not running\n");
-        return 1;
-    }
-    QString method;
-    QVariantMap params;
-    if (target.startsWith("streamdeck://")) {
-        method = "deepLink";
-        params["url"] = target;
-    } else {
-        const QString path = QFileInfo(target).absoluteFilePath();
-        params["path"] = path;
-        if (path.endsWith(".streamDeckPlugin") || path.endsWith(".sdPlugin"))
-            method = "installPlugin";
-        else if (path.endsWith(".streamDeckIconPack") || path.endsWith(".sdIconPack"))
-            method = "installIconPack";
-        else
-            method = "importProfile";
-    }
-    QVariantMap req{{"id", 1}, {"method", method}, {"params", params}};
-    s.write(QJsonDocument::fromVariant(req).toJson(QJsonDocument::Compact) + "\n");
-    s.flush();
-    if (!s.waitForReadyRead(15000)) {
-        fprintf(stderr, "no reply from streamdeckd\n");
-        return 1;
-    }
-    const QVariantMap reply = QJsonDocument::fromJson(s.readLine()).toVariant().toMap();
-    if (reply.contains("error")) {
-        fprintf(stderr, "%s\n", qPrintable(reply.value("error").toString()));
-        return 1;
-    }
-    printf("%s\n", qPrintable(QJsonDocument::fromVariant(reply.value("result")).toJson(QJsonDocument::Compact)));
-    return 0;
+    return Opener::run(target, socketPath + "/control.sock");
 }
 
 int main(int argc, char *argv[]) {

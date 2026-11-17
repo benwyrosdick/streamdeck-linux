@@ -5,6 +5,6 @@ TEMPLATE = app
 
 INCLUDEPATH += ../src
 
-HEADERS += ../src/daemonclient.h ../src/theme.h ../src/translator.h ../src/apputil.h
+HEADERS += ../src/daemonclient.h ../src/theme.h ../src/translator.h ../src/apputil.h ../src/opener.h
 RESOURCES += ../src/resources.qrc
-SOURCES += streamdeck_tests.cpp ../src/daemonclient.cpp ../src/theme.cpp ../src/translator.cpp ../src/apputil.cpp
+SOURCES += streamdeck_tests.cpp ../src/daemonclient.cpp ../src/theme.cpp ../src/translator.cpp ../src/apputil.cpp ../src/opener.cpp

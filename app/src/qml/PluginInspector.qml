@@ -23,8 +23,8 @@ Rectangle {
         if (!context) return
         const ctx = context
         Store.call("piInfo", { context: ctx }, function (r, err) {
-            if (ctx !== host.context) return
-            if (err) { host.error = err; return }
+            if (ctx !== host.context) return true
+            if (err) { host.error = err; return true }
             // The page calls nothing itself; like the original app we call its
             // connectElgatoStreamDeckSocket() once it has loaded, retrying
             // briefly for inspectors that define it in deferred scripts.

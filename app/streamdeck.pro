@@ -7,6 +7,7 @@ TEMPLATE = app
 HEADERS += \
     src/apputil.h \
     src/daemonclient.h \
+    src/opener.h \
     src/pluginhost.h \
     src/portalfilepicker.h \
     src/theme.h \
@@ -16,6 +17,7 @@ SOURCES += \
     src/main.cpp \
     src/apputil.cpp \
     src/daemonclient.cpp \
+    src/opener.cpp \
     src/pluginhost.cpp \
     src/portalfilepicker.cpp \
     src/theme.cpp \
