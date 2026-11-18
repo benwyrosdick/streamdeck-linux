@@ -142,6 +142,7 @@ Rectangle {
                             drag.target: ghost
                             drag.threshold: 4
                             cursorShape: Qt.OpenHandCursor
+                            onPressed: function (mouse) { ghost.grab(mouse) }
                             onReleased: function (mouse) { ghost.finish(mouse) }
                             onDoubleClicked: {
                                 if (Store.selected) Store.placeAction(Store.selected, row.modelData.uuid)

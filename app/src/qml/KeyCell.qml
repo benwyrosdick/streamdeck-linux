@@ -69,8 +69,10 @@ Item {
         cursorShape: drag.active ? Qt.ClosedHandCursor : Qt.PointingHandCursor
 
         onPressed: function (mouse) {
-            if (mouse.button === Qt.LeftButton)
+            if (mouse.button === Qt.LeftButton) {
+                ghost.grab(mouse)
                 Store.selected = cell.sel
+            }
         }
         onReleased: function (mouse) { ghost.finish(mouse) }
         onClicked: function (mouse) {

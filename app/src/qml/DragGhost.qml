@@ -43,6 +43,14 @@ Item {
         }
     }
 
+    // Centres the ghost on the press point. Drops go to whatever is under
+    // the hot spot, so it has to start under the pointer and stay there.
+    function grab(mouse) {
+        const p = handle.mapToItem(parent, mouse.x, mouse.y)
+        x = p.x - width / 2
+        y = p.y - height / 2
+    }
+
     // Returns the ghost to its origin after a drop.
     function finish(mouse) {
         copy = !!(mouse && (mouse.modifiers & Qt.ControlModifier))

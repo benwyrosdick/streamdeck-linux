@@ -6,7 +6,10 @@
 #include <QJsonObject>
 #include <QLocalServer>
 #include <QLocalSocket>
+#include <QQmlApplicationEngine>
+#include <QQmlContext>
 #include <QQmlEngine>
+#include <QQuickWindow>
 #include <QTemporaryDir>
 #include <QtTest>
 
@@ -178,6 +181,53 @@ private slots:
         Theme theme(dir.path());
         QCOMPARE(theme.accent(), QString("#112233"));
         QCOMPARE(theme.accentForeground(), QString("white"));
+    }
+
+    // Grabbing a wide action-list row far from its left edge must still drag
+    // with the drop target under the pointer, not where the row was grabbed.
+    void dragDropsUnderThePointer() {
+        QTemporaryDir dir;
+        Theme theme(dir.path());
+        QQmlApplicationEngine engine;
+        engine.rootContext()->setContextProperty("theme", &theme);
+        engine.loadData(R"(
+            import QtQuick
+            import QtQuick.Controls
+            import "qrc:/qml"
+            ApplicationWindow {
+                id: root
+                width: 600; height: 300; visible: true
+                property bool over: drop.containsDrag
+                property bool dropped: false
+                Item {
+                    width: 300; height: 40
+                    MouseArea {
+                        id: area
+                        anchors.fill: parent
+                        drag.target: ghost
+                        drag.threshold: 4
+                        onPressed: function (mouse) { ghost.grab(mouse) }
+                        onReleased: function (mouse) { ghost.finish(mouse) }
+                    }
+                    DragGhost { id: ghost; handle: area; kindKey: "action" }
+                }
+                DropArea {
+                    id: drop
+                    x: 400; y: 200; width: 60; height: 60
+                    keys: ["action"]
+                    onDropped: root.dropped = true
+                }
+            })", QUrl("qrc:/test.qml"));
+        QCOMPARE(engine.rootObjects().size(), 1);
+        auto *window = qobject_cast<QQuickWindow *>(engine.rootObjects().first());
+        QVERIFY(QTest::qWaitForWindowExposed(window));
+
+        QTest::mousePress(window, Qt::LeftButton, {}, QPoint(280, 20));
+        for (int i = 1; i <= 10; ++i)
+            QTest::mouseMove(window, QPoint(280 + 15 * i, 20 + 21 * i));
+        QTRY_VERIFY(window->property("over").toBool());
+        QTest::mouseRelease(window, Qt::LeftButton, {}, QPoint(430, 230));
+        QTRY_VERIFY(window->property("dropped").toBool());
     }
 
     void translatorFallsBackToEnglish() {
