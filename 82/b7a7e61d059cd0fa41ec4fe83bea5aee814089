@@ -1,0 +1,27 @@
+app/src/qml/KeyCell.qml
+  s_41b6412da7f181::t_2a057d20b08d86 72-73,75
+app/src/qml/DragGhost.qml
+  s_41b6412da7f181::t_2a057d20b08d86 46-53
+app/src/qml/ActionList.qml
+  s_41b6412da7f181::t_2a057d20b08d86 145
+app/tests/streamdeck_tests.cpp
+  s_41b6412da7f181::t_1100bb83fa1167 9-10,12,186-197,199-217,219-230
+  s_41b6412da7f181::t_e7bf5fc31a4b0e 198,218
+  s_41b6412da7f181::t_4e66d23cacf7b2 231-232
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "82b7a7e61d059cd0fa41ec4fe83bea5aee814089",
+  "prompts": {},
+  "sessions": {
+    "s_41b6412da7f181": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "01a1e66f-4a72-7419-93e5-300ec3a90f83",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Ben Wyrosdick <ben.wyrosdick@gmail.com>"
+    }
+  }
+}
